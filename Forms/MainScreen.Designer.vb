@@ -32,7 +32,7 @@ Partial Class frmMainScreen
         Dim NotesLabel As System.Windows.Forms.Label
         Dim StatusLabel As System.Windows.Forms.Label
         Dim IDLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnAddOrder = New System.Windows.Forms.Button()
         Me.btnDeleteOrder = New System.Windows.Forms.Button()
         Me.btnUpdateOrder = New System.Windows.Forms.Button()
@@ -341,9 +341,9 @@ Partial Class frmMainScreen
         'TotalPriceDataGridViewTextBoxColumn
         '
         Me.TotalPriceDataGridViewTextBoxColumn.DataPropertyName = "Total_Price"
-        DataGridViewCellStyle4.Format = "C2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.TotalPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Format = "C2"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.TotalPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
         Me.TotalPriceDataGridViewTextBoxColumn.HeaderText = "Total Price"
         Me.TotalPriceDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.TotalPriceDataGridViewTextBoxColumn.Name = "TotalPriceDataGridViewTextBoxColumn"
