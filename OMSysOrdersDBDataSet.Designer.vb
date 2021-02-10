@@ -879,8 +879,7 @@ Partial Public Class OMSysOrdersDBDataSet
             MyBase.Columns.Add(Me.columnUnit_Price)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
             Me.columnID.AutoIncrement = true
-            Me.columnID.AutoIncrementSeed = -1
-            Me.columnID.AutoIncrementStep = -1
+            Me.columnID.AutoIncrementSeed = 1
             Me.columnID.AllowDBNull = false
             Me.columnID.Unique = true
             Me.columnMaterial_Name.MaxLength = 255
