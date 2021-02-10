@@ -882,6 +882,7 @@ Partial Public Class OMSysOrdersDBDataSet
             Me.columnID.AutoIncrementSeed = 1
             Me.columnID.AllowDBNull = false
             Me.columnID.Unique = true
+            Me.columnDate_Added.DateTimeMode = Global.System.Data.DataSetDateTime.Local
             Me.columnMaterial_Name.MaxLength = 255
         End Sub
         

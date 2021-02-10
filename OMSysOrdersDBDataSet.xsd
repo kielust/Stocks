@@ -205,7 +205,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Date_Added" msprop:Generator_ColumnVarNameInTable="columnDate_Added" msprop:Generator_ColumnPropNameInRow="Date_Added" msprop:Generator_ColumnPropNameInTable="Date_AddedColumn" msprop:Generator_UserColumnName="Date_Added" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Date_Added" msdata:DateTimeMode="Local" msprop:Generator_ColumnVarNameInTable="columnDate_Added" msprop:Generator_ColumnPropNameInRow="Date_Added" msprop:Generator_ColumnPropNameInTable="Date_AddedColumn" msprop:Generator_UserColumnName="Date_Added" type="xs:dateTime" minOccurs="0" />
               <xs:element name="Material_Name" msprop:Generator_ColumnVarNameInTable="columnMaterial_Name" msprop:Generator_ColumnPropNameInRow="Material_Name" msprop:Generator_ColumnPropNameInTable="Material_NameColumn" msprop:Generator_UserColumnName="Material_Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
