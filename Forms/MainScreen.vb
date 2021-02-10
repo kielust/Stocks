@@ -12,9 +12,7 @@
     End Sub
 
     Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
-
         OMSys_OrdersDBBindingSource.AddNew()
-
     End Sub
 
     Private Sub btnDeleteOrder_Click_1(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click

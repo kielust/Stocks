@@ -44,18 +44,18 @@ Partial Class frmMainScreen2
         Me.Selling_PriceTextBox = New System.Windows.Forms.TextBox()
         Me.Unit_PriceTextBox = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateAddedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MaterialNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SellingPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UnitPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IDTextBox = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.OMSys_OrdersDBTableAdapter = New OMSys.OMSysOrdersDBDataSetTableAdapters.OMSys_OrdersDBTableAdapter()
         Me.TableAdapterManager = New OMSys.OMSysOrdersDBDataSetTableAdapters.TableAdapterManager()
         Me.OMSys_StocksDBTableAdapter = New OMSys.OMSysOrdersDBDataSetTableAdapters.OMSys_StocksDBTableAdapter()
         Me.Date_AddedDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateAddedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MaterialNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SellingPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UnitPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         DateAdded_NameLabel = New System.Windows.Forms.Label()
         Material_NameLabel = New System.Windows.Forms.Label()
         StockLabel = New System.Windows.Forms.Label()
@@ -121,6 +121,15 @@ Partial Class frmMainScreen2
         IDLabel.TabIndex = 90
         IDLabel.Text = "Order ID:"
         '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.Location = New System.Drawing.Point(1092, 271)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(73, 16)
+        Label4.TabIndex = 95
+        Label4.Text = "Selling Price:"
+        '
         'btnAddOrder
         '
         Me.btnAddOrder.BackColor = System.Drawing.Color.DeepSkyBlue
@@ -160,9 +169,9 @@ Partial Class frmMainScreen2
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(26, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(193, 45)
+        Me.Label1.Size = New System.Drawing.Size(189, 45)
         Me.Label1.TabIndex = 57
-        Me.Label1.Text = "Order List"
+        Me.Label1.Text = "Stock List"
         '
         'Label2
         '
@@ -245,48 +254,6 @@ Partial Class frmMainScreen2
         Me.DataGridView1.Size = New System.Drawing.Size(1005, 580)
         Me.DataGridView1.TabIndex = 85
         '
-        'IDDataGridViewTextBoxColumn
-        '
-        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
-        '
-        'DateAddedDataGridViewTextBoxColumn
-        '
-        Me.DateAddedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DateAddedDataGridViewTextBoxColumn.DataPropertyName = "Date_Added"
-        Me.DateAddedDataGridViewTextBoxColumn.HeaderText = "Date Added"
-        Me.DateAddedDataGridViewTextBoxColumn.Name = "DateAddedDataGridViewTextBoxColumn"
-        '
-        'MaterialNameDataGridViewTextBoxColumn
-        '
-        Me.MaterialNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.MaterialNameDataGridViewTextBoxColumn.DataPropertyName = "Material_Name"
-        Me.MaterialNameDataGridViewTextBoxColumn.HeaderText = "Material Name"
-        Me.MaterialNameDataGridViewTextBoxColumn.Name = "MaterialNameDataGridViewTextBoxColumn"
-        '
-        'StockDataGridViewTextBoxColumn
-        '
-        Me.StockDataGridViewTextBoxColumn.DataPropertyName = "Stock"
-        Me.StockDataGridViewTextBoxColumn.HeaderText = "Stock"
-        Me.StockDataGridViewTextBoxColumn.Name = "StockDataGridViewTextBoxColumn"
-        '
-        'SellingPriceDataGridViewTextBoxColumn
-        '
-        Me.SellingPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.SellingPriceDataGridViewTextBoxColumn.DataPropertyName = "Selling_Price"
-        Me.SellingPriceDataGridViewTextBoxColumn.HeaderText = "Selling Price"
-        Me.SellingPriceDataGridViewTextBoxColumn.Name = "SellingPriceDataGridViewTextBoxColumn"
-        Me.SellingPriceDataGridViewTextBoxColumn.Width = 95
-        '
-        'UnitPriceDataGridViewTextBoxColumn
-        '
-        Me.UnitPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.UnitPriceDataGridViewTextBoxColumn.DataPropertyName = "Unit_Price"
-        Me.UnitPriceDataGridViewTextBoxColumn.HeaderText = "Unit Price"
-        Me.UnitPriceDataGridViewTextBoxColumn.Name = "UnitPriceDataGridViewTextBoxColumn"
-        Me.UnitPriceDataGridViewTextBoxColumn.Width = 83
-        '
         'IDTextBox
         '
         Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSysStocksDBBindingSource, "ID", True))
@@ -328,14 +295,48 @@ Partial Class frmMainScreen2
         Me.Date_AddedDateTimePicker.Size = New System.Drawing.Size(192, 20)
         Me.Date_AddedDateTimePicker.TabIndex = 93
         '
-        'Label4
+        'IDDataGridViewTextBoxColumn
         '
-        Label4.AutoSize = True
-        Label4.Location = New System.Drawing.Point(1092, 271)
-        Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(73, 16)
-        Label4.TabIndex = 95
-        Label4.Text = "Selling Price:"
+        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DateAddedDataGridViewTextBoxColumn
+        '
+        Me.DateAddedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DateAddedDataGridViewTextBoxColumn.DataPropertyName = "Date_Added"
+        Me.DateAddedDataGridViewTextBoxColumn.HeaderText = "Date Added"
+        Me.DateAddedDataGridViewTextBoxColumn.Name = "DateAddedDataGridViewTextBoxColumn"
+        '
+        'MaterialNameDataGridViewTextBoxColumn
+        '
+        Me.MaterialNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.MaterialNameDataGridViewTextBoxColumn.DataPropertyName = "Material_Name"
+        Me.MaterialNameDataGridViewTextBoxColumn.HeaderText = "Material Name"
+        Me.MaterialNameDataGridViewTextBoxColumn.Name = "MaterialNameDataGridViewTextBoxColumn"
+        '
+        'StockDataGridViewTextBoxColumn
+        '
+        Me.StockDataGridViewTextBoxColumn.DataPropertyName = "Stock"
+        Me.StockDataGridViewTextBoxColumn.HeaderText = "Stock"
+        Me.StockDataGridViewTextBoxColumn.Name = "StockDataGridViewTextBoxColumn"
+        '
+        'SellingPriceDataGridViewTextBoxColumn
+        '
+        Me.SellingPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.SellingPriceDataGridViewTextBoxColumn.DataPropertyName = "Selling_Price"
+        Me.SellingPriceDataGridViewTextBoxColumn.HeaderText = "Selling Price"
+        Me.SellingPriceDataGridViewTextBoxColumn.Name = "SellingPriceDataGridViewTextBoxColumn"
+        Me.SellingPriceDataGridViewTextBoxColumn.Width = 95
+        '
+        'UnitPriceDataGridViewTextBoxColumn
+        '
+        Me.UnitPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.UnitPriceDataGridViewTextBoxColumn.DataPropertyName = "Unit_Price"
+        Me.UnitPriceDataGridViewTextBoxColumn.HeaderText = "Unit Price"
+        Me.UnitPriceDataGridViewTextBoxColumn.Name = "UnitPriceDataGridViewTextBoxColumn"
+        Me.UnitPriceDataGridViewTextBoxColumn.Width = 83
         '
         'frmMainScreen2
         '
@@ -396,11 +397,11 @@ Partial Class frmMainScreen2
     Friend WithEvents Label7 As Label
     Friend WithEvents OMSysStocksDBBindingSource As BindingSource
     Friend WithEvents OMSys_StocksDBTableAdapter As OMSysOrdersDBDataSetTableAdapters.OMSys_StocksDBTableAdapter
+    Friend WithEvents Date_AddedDateTimePicker As DateTimePicker
     Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DateAddedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents MaterialNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SellingPriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents UnitPriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Date_AddedDateTimePicker As DateTimePicker
 End Class

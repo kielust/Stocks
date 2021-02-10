@@ -31,9 +31,25 @@
 
     Private Sub btnUpdateOrder_Click_1(sender As Object, e As EventArgs) Handles btnUpdateOrder.Click
 
-        OMSysStocksDBBindingSource.EndEdit()
-        OMSys_StocksDBTableAdapter.Update(OMSysOrdersDBDataSet)
-        MessageBox.Show("Data Saved.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+        If IDTextBox.Text = "" Or Material_NameTextBox.Text = "" Or
+            StockTextBox.Text = "" Or Selling_PriceTextBox.Text = "" Or Unit_PriceTextBox.Text = "" Then
+
+            MessageBox.Show("Incomplete field/s.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Try
+
+                OMSysStocksDBBindingSource.EndEdit()
+                OMSys_StocksDBTableAdapter.Update(OMSysOrdersDBDataSet)
+                MessageBox.Show("Data Saved.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Catch ex As Exception
+                MessageBox.Show("asdsadsad")
+            End Try
+        End If
+
+
 
     End Sub
 End Class
