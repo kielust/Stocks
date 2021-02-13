@@ -50,13 +50,10 @@
                 OMSysStocksDBBindingSource.EndEdit()
                 OMSys_StocksDBTableAdapter.Update(OMSysOrdersDBDataSet)
                 MessageBox.Show("Data Saved.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
             End Try
         End If
-
-
 
     End Sub
 
