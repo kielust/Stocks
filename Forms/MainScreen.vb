@@ -13,6 +13,7 @@
 
     Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
         OMSys_OrdersDBBindingSource.AddNew()
+        btnUpdateOrder.Visible = True
     End Sub
 
     Private Sub btnDeleteOrder_Click_1(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click
@@ -30,7 +31,6 @@
     End Sub
 
     Private Sub btnUpdateOrder_Click_1(sender As Object, e As EventArgs) Handles btnUpdateOrder.Click
-
         If IDTextBox.Text = "" Or Customer_NameTextBox.Text = "" Or Product_NameTextBox.Text = "" Or
             QuantityTextBox.Text = "" Or Status_CMBox.Text = "" Then
 
@@ -40,14 +40,21 @@
                 OMSys_OrdersDBBindingSource.EndEdit()
                 OMSys_OrdersDBTableAdapter.Update(OMSysOrdersDBDataSet)
                 MessageBox.Show("Data Saved.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                btnUpdateOrder.Visible = False
 
             Catch ex As Exception
-
+                MessageBox.Show(ex.ToString)
             End Try
         End If
     End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
+    Private Sub btnPrevious_Click(sender As Object, e As EventArgs) Handles btnPrevious.Click
+        OMSys_OrdersDBBindingSource.MovePrevious()
     End Sub
+
+    Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
+        OMSys_OrdersDBBindingSource.MoveNext()
+    End Sub
+
+
+
 End Class

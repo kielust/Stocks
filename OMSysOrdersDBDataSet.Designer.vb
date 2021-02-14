@@ -1662,7 +1662,15 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = ""
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `OMSys_OrdersDB` SET `Customer_Name` = ?, `Product_Name` = ?, `Quantity` ="& _ 
+                " ?, `Total_Price` = ?, `Address` = ?,  `Contact_Number` = ?, `Notes` = ?, `Statu"& _ 
+                "s` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Customer_Name` IS NULL) OR (`Customer_"& _ 
+                "Name` = ?)) AND ((? = 1 AND `Product_Name` IS NULL) OR (`Product_Name` = ?)) AND"& _ 
+                " ((? = 1 AND `Quantity` IS NULL) OR (`Quantity` = ?)) AND ((? = 1 AND `Total_Pri"& _ 
+                "ce` IS NULL) OR (`Total_Price` = ?)) AND ((? = 1 AND `Address` IS NULL) OR (`Add"& _ 
+                "ress` = ?)) AND (? = 1 AND `Contact_Number` IS NULL) OR (`Contact_Number` = ?)) "& _ 
+                "AND (? = 1 AND `Notes` IS NULL) OR (`Notes` = ?)) AND (? = 1 AND `Status` IS NUL"& _ 
+                "L) OR (`Status` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
         End Sub
         

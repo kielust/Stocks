@@ -4,3 +4,8 @@
 
     End Class
 End Class
+
+Namespace OMSysOrdersDBDataSetTableAdapters
+    Partial Public Class OMSys_OrdersDBTableAdapter
+    End Class
+End Namespace

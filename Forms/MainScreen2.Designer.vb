@@ -30,8 +30,8 @@ Partial Class frmMainScreen2
         Dim Unit_PriceLabel As System.Windows.Forms.Label
         Dim IDLabel As System.Windows.Forms.Label
         Dim Label4 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnAddOrder = New System.Windows.Forms.Button()
         Me.btnDeleteOrder = New System.Windows.Forms.Button()
         Me.btnUpdateOrder = New System.Windows.Forms.Button()
@@ -45,6 +45,12 @@ Partial Class frmMainScreen2
         Me.Selling_PriceTextBox = New System.Windows.Forms.TextBox()
         Me.Unit_PriceTextBox = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateAddedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MaterialNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SellingPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UnitPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IDTextBox = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Date_AddedDateTimePicker = New System.Windows.Forms.DateTimePicker()
@@ -52,12 +58,6 @@ Partial Class frmMainScreen2
         Me.OMSys_OrdersDBTableAdapter = New OMSys.OMSysOrdersDBDataSetTableAdapters.OMSys_OrdersDBTableAdapter()
         Me.TableAdapterManager = New OMSys.OMSysOrdersDBDataSetTableAdapters.TableAdapterManager()
         Me.OMSys_StocksDBTableAdapter = New OMSys.OMSysOrdersDBDataSetTableAdapters.OMSys_StocksDBTableAdapter()
-        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateAddedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MaterialNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SellingPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UnitPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         DateAdded_NameLabel = New System.Windows.Forms.Label()
         Material_NameLabel = New System.Windows.Forms.Label()
         StockLabel = New System.Windows.Forms.Label()
@@ -251,53 +251,6 @@ Partial Class frmMainScreen2
         Me.DataGridView1.Size = New System.Drawing.Size(1005, 580)
         Me.DataGridView1.TabIndex = 85
         '
-        'IDTextBox
-        '
-        Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSysStocksDBBindingSource, "ID", True))
-        Me.IDTextBox.Location = New System.Drawing.Point(1247, 95)
-        Me.IDTextBox.Name = "IDTextBox"
-        Me.IDTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.IDTextBox.TabIndex = 91
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(1159, 99)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(14, 16)
-        Me.Label7.TabIndex = 92
-        Me.Label7.Text = "*"
-        '
-        'Date_AddedDateTimePicker
-        '
-        Me.Date_AddedDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.OMSysStocksDBBindingSource, "Date_Added", True))
-        Me.Date_AddedDateTimePicker.Location = New System.Drawing.Point(1247, 135)
-        Me.Date_AddedDateTimePicker.Name = "Date_AddedDateTimePicker"
-        Me.Date_AddedDateTimePicker.Size = New System.Drawing.Size(192, 20)
-        Me.Date_AddedDateTimePicker.TabIndex = 93
-        Me.Date_AddedDateTimePicker.Value = New Date(2021, 2, 10, 20, 43, 35, 0)
-        '
-        'OMSys_OrdersDBBindingSource
-        '
-        Me.OMSys_OrdersDBBindingSource.DataMember = "OMSys_OrdersDB"
-        Me.OMSys_OrdersDBBindingSource.DataSource = Me.OMSysOrdersDBDataSet
-        '
-        'OMSys_OrdersDBTableAdapter
-        '
-        Me.OMSys_OrdersDBTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.OMSys_OrdersDBTableAdapter = Me.OMSys_OrdersDBTableAdapter
-        Me.TableAdapterManager.OMSys_StocksDBTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = OMSys.OMSysOrdersDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'OMSys_StocksDBTableAdapter
-        '
-        Me.OMSys_StocksDBTableAdapter.ClearBeforeFill = True
-        '
         'IDDataGridViewTextBoxColumn
         '
         Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
@@ -329,8 +282,8 @@ Partial Class frmMainScreen2
         '
         Me.SellingPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
         Me.SellingPriceDataGridViewTextBoxColumn.DataPropertyName = "Selling_Price"
-        DataGridViewCellStyle1.Format = "C2"
-        Me.SellingPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.Format = "C2"
+        Me.SellingPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle13
         Me.SellingPriceDataGridViewTextBoxColumn.HeaderText = "Selling Price"
         Me.SellingPriceDataGridViewTextBoxColumn.Name = "SellingPriceDataGridViewTextBoxColumn"
         Me.SellingPriceDataGridViewTextBoxColumn.Width = 95
@@ -339,12 +292,63 @@ Partial Class frmMainScreen2
         '
         Me.UnitPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
         Me.UnitPriceDataGridViewTextBoxColumn.DataPropertyName = "Unit_Price"
-        DataGridViewCellStyle2.Format = "C2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.UnitPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Format = "C2"
+        DataGridViewCellStyle14.NullValue = Nothing
+        Me.UnitPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle14
         Me.UnitPriceDataGridViewTextBoxColumn.HeaderText = "Unit Price"
         Me.UnitPriceDataGridViewTextBoxColumn.Name = "UnitPriceDataGridViewTextBoxColumn"
         Me.UnitPriceDataGridViewTextBoxColumn.Width = 83
+        '
+        'IDTextBox
+        '
+        Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSysStocksDBBindingSource, "ID", True))
+        Me.IDTextBox.Location = New System.Drawing.Point(1247, 95)
+        Me.IDTextBox.Name = "IDTextBox"
+        Me.IDTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.IDTextBox.TabIndex = 91
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(1159, 99)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(14, 16)
+        Me.Label7.TabIndex = 92
+        Me.Label7.Text = "*"
+        '
+        'Date_AddedDateTimePicker
+        '
+        Me.Date_AddedDateTimePicker.AllowDrop = True
+        Me.Date_AddedDateTimePicker.CustomFormat = ""
+        Me.Date_AddedDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.OMSysStocksDBBindingSource, "Date_Added", True))
+        Me.Date_AddedDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Date_AddedDateTimePicker.Location = New System.Drawing.Point(1247, 135)
+        Me.Date_AddedDateTimePicker.Name = "Date_AddedDateTimePicker"
+        Me.Date_AddedDateTimePicker.ShowCheckBox = True
+        Me.Date_AddedDateTimePicker.Size = New System.Drawing.Size(192, 20)
+        Me.Date_AddedDateTimePicker.TabIndex = 93
+        Me.Date_AddedDateTimePicker.Value = New Date(2020, 1, 1, 0, 0, 0, 0)
+        '
+        'OMSys_OrdersDBBindingSource
+        '
+        Me.OMSys_OrdersDBBindingSource.DataMember = "OMSys_OrdersDB"
+        Me.OMSys_OrdersDBBindingSource.DataSource = Me.OMSysOrdersDBDataSet
+        '
+        'OMSys_OrdersDBTableAdapter
+        '
+        Me.OMSys_OrdersDBTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.OMSys_OrdersDBTableAdapter = Me.OMSys_OrdersDBTableAdapter
+        Me.TableAdapterManager.OMSys_StocksDBTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = OMSys.OMSysOrdersDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'OMSys_StocksDBTableAdapter
+        '
+        Me.OMSys_StocksDBTableAdapter.ClearBeforeFill = True
         '
         'frmMainScreen2
         '

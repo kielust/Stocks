@@ -66,6 +66,8 @@ Partial Class frmMainScreen
         Me.Label7 = New System.Windows.Forms.Label()
         Me.OMSys_OrdersDBTableAdapter = New OMSys.OMSysOrdersDBDataSetTableAdapters.OMSys_OrdersDBTableAdapter()
         Me.TableAdapterManager = New OMSys.OMSysOrdersDBDataSetTableAdapters.TableAdapterManager()
+        Me.btnPrevious = New System.Windows.Forms.Button()
+        Me.btnNext = New System.Windows.Forms.Button()
         Customer_NameLabel = New System.Windows.Forms.Label()
         Product_NameLabel = New System.Windows.Forms.Label()
         QuantityLabel = New System.Windows.Forms.Label()
@@ -85,7 +87,7 @@ Partial Class frmMainScreen
         Customer_NameLabel.AutoSize = True
         Customer_NameLabel.Location = New System.Drawing.Point(1092, 135)
         Customer_NameLabel.Name = "Customer_NameLabel"
-        Customer_NameLabel.Size = New System.Drawing.Size(98, 16)
+        Customer_NameLabel.Size = New System.Drawing.Size(85, 13)
         Customer_NameLabel.TabIndex = 69
         Customer_NameLabel.Text = "Customer Name:"
         '
@@ -94,7 +96,7 @@ Partial Class frmMainScreen
         Product_NameLabel.AutoSize = True
         Product_NameLabel.Location = New System.Drawing.Point(1092, 178)
         Product_NameLabel.Name = "Product_NameLabel"
-        Product_NameLabel.Size = New System.Drawing.Size(90, 16)
+        Product_NameLabel.Size = New System.Drawing.Size(78, 13)
         Product_NameLabel.TabIndex = 71
         Product_NameLabel.Text = "Product Name:"
         '
@@ -103,7 +105,7 @@ Partial Class frmMainScreen
         QuantityLabel.AutoSize = True
         QuantityLabel.Location = New System.Drawing.Point(1092, 223)
         QuantityLabel.Name = "QuantityLabel"
-        QuantityLabel.Size = New System.Drawing.Size(59, 16)
+        QuantityLabel.Size = New System.Drawing.Size(49, 13)
         QuantityLabel.TabIndex = 73
         QuantityLabel.Text = "Quantity:"
         '
@@ -112,7 +114,7 @@ Partial Class frmMainScreen
         Total_PriceLabel.AutoSize = True
         Total_PriceLabel.Location = New System.Drawing.Point(1092, 268)
         Total_PriceLabel.Name = "Total_PriceLabel"
-        Total_PriceLabel.Size = New System.Drawing.Size(66, 16)
+        Total_PriceLabel.Size = New System.Drawing.Size(61, 13)
         Total_PriceLabel.TabIndex = 75
         Total_PriceLabel.Text = "Total Price:"
         '
@@ -121,7 +123,7 @@ Partial Class frmMainScreen
         AddressLabel.AutoSize = True
         AddressLabel.Location = New System.Drawing.Point(1092, 311)
         AddressLabel.Name = "AddressLabel"
-        AddressLabel.Size = New System.Drawing.Size(52, 16)
+        AddressLabel.Size = New System.Drawing.Size(48, 13)
         AddressLabel.TabIndex = 77
         AddressLabel.Text = "Address:"
         '
@@ -130,7 +132,7 @@ Partial Class frmMainScreen
         Contact_NumberLabel.AutoSize = True
         Contact_NumberLabel.Location = New System.Drawing.Point(1092, 358)
         Contact_NumberLabel.Name = "Contact_NumberLabel"
-        Contact_NumberLabel.Size = New System.Drawing.Size(103, 16)
+        Contact_NumberLabel.Size = New System.Drawing.Size(87, 13)
         Contact_NumberLabel.TabIndex = 79
         Contact_NumberLabel.Text = "Contact Number:"
         '
@@ -139,7 +141,7 @@ Partial Class frmMainScreen
         NotesLabel.AutoSize = True
         NotesLabel.Location = New System.Drawing.Point(1092, 405)
         NotesLabel.Name = "NotesLabel"
-        NotesLabel.Size = New System.Drawing.Size(41, 16)
+        NotesLabel.Size = New System.Drawing.Size(38, 13)
         NotesLabel.TabIndex = 81
         NotesLabel.Text = "Notes:"
         '
@@ -148,7 +150,7 @@ Partial Class frmMainScreen
         StatusLabel.AutoSize = True
         StatusLabel.Location = New System.Drawing.Point(1092, 504)
         StatusLabel.Name = "StatusLabel"
-        StatusLabel.Size = New System.Drawing.Size(44, 16)
+        StatusLabel.Size = New System.Drawing.Size(40, 13)
         StatusLabel.TabIndex = 83
         StatusLabel.Text = "Status:"
         '
@@ -157,7 +159,7 @@ Partial Class frmMainScreen
         IDLabel.AutoSize = True
         IDLabel.Location = New System.Drawing.Point(1092, 99)
         IDLabel.Name = "IDLabel"
-        IDLabel.Size = New System.Drawing.Size(56, 16)
+        IDLabel.Size = New System.Drawing.Size(50, 13)
         IDLabel.TabIndex = 90
         IDLabel.Text = "Order ID:"
         '
@@ -193,34 +195,35 @@ Partial Class frmMainScreen
         Me.btnUpdateOrder.TabIndex = 40
         Me.btnUpdateOrder.Text = "Save"
         Me.btnUpdateOrder.UseVisualStyleBackColor = False
+        Me.btnUpdateOrder.Visible = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(26, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(193, 45)
+        Me.Label1.Size = New System.Drawing.Size(188, 44)
         Me.Label1.TabIndex = 57
         Me.Label1.Text = "Order List"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(1173, 714)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(172, 16)
+        Me.Label2.Size = New System.Drawing.Size(173, 13)
         Me.Label2.TabIndex = 59
         Me.Label2.Text = "ORDER MANAGEMENT SYSTEM"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(1124, 612)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(250, 78)
+        Me.Label3.Size = New System.Drawing.Size(264, 73)
         Me.Label3.TabIndex = 58
         Me.Label3.Text = "OMSYS"
         '
@@ -229,7 +232,7 @@ Partial Class frmMainScreen
         Me.Customer_NameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Customer_Name", True))
         Me.Customer_NameTextBox.Location = New System.Drawing.Point(1247, 135)
         Me.Customer_NameTextBox.Name = "Customer_NameTextBox"
-        Me.Customer_NameTextBox.Size = New System.Drawing.Size(192, 20)
+        Me.Customer_NameTextBox.Size = New System.Drawing.Size(192, 19)
         Me.Customer_NameTextBox.TabIndex = 70
         '
         'OMSys_OrdersDBBindingSource
@@ -247,7 +250,7 @@ Partial Class frmMainScreen
         Me.Product_NameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Product_Name", True))
         Me.Product_NameTextBox.Location = New System.Drawing.Point(1247, 178)
         Me.Product_NameTextBox.Name = "Product_NameTextBox"
-        Me.Product_NameTextBox.Size = New System.Drawing.Size(192, 20)
+        Me.Product_NameTextBox.Size = New System.Drawing.Size(192, 19)
         Me.Product_NameTextBox.TabIndex = 72
         '
         'QuantityTextBox
@@ -255,7 +258,7 @@ Partial Class frmMainScreen
         Me.QuantityTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Quantity", True))
         Me.QuantityTextBox.Location = New System.Drawing.Point(1247, 223)
         Me.QuantityTextBox.Name = "QuantityTextBox"
-        Me.QuantityTextBox.Size = New System.Drawing.Size(192, 20)
+        Me.QuantityTextBox.Size = New System.Drawing.Size(192, 19)
         Me.QuantityTextBox.TabIndex = 74
         '
         'Total_PriceTextBox
@@ -263,7 +266,7 @@ Partial Class frmMainScreen
         Me.Total_PriceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Total_Price", True))
         Me.Total_PriceTextBox.Location = New System.Drawing.Point(1247, 268)
         Me.Total_PriceTextBox.Name = "Total_PriceTextBox"
-        Me.Total_PriceTextBox.Size = New System.Drawing.Size(192, 20)
+        Me.Total_PriceTextBox.Size = New System.Drawing.Size(192, 19)
         Me.Total_PriceTextBox.TabIndex = 76
         '
         'AddressTextBox
@@ -271,7 +274,7 @@ Partial Class frmMainScreen
         Me.AddressTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Address", True))
         Me.AddressTextBox.Location = New System.Drawing.Point(1247, 311)
         Me.AddressTextBox.Name = "AddressTextBox"
-        Me.AddressTextBox.Size = New System.Drawing.Size(192, 20)
+        Me.AddressTextBox.Size = New System.Drawing.Size(192, 19)
         Me.AddressTextBox.TabIndex = 78
         '
         'Contact_NumberTextBox
@@ -279,7 +282,7 @@ Partial Class frmMainScreen
         Me.Contact_NumberTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Contact_Number", True))
         Me.Contact_NumberTextBox.Location = New System.Drawing.Point(1247, 358)
         Me.Contact_NumberTextBox.Name = "Contact_NumberTextBox"
-        Me.Contact_NumberTextBox.Size = New System.Drawing.Size(192, 20)
+        Me.Contact_NumberTextBox.Size = New System.Drawing.Size(192, 19)
         Me.Contact_NumberTextBox.TabIndex = 80
         '
         'NotesTextBox
@@ -293,17 +296,24 @@ Partial Class frmMainScreen
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToOrderColumns = True
+        Me.DataGridView1.AllowUserToResizeColumns = False
+        Me.DataGridView1.AllowUserToResizeRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.CustomerNameDataGridViewTextBoxColumn, Me.ProductNameDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.TotalPriceDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.ContactNumberDataGridViewTextBoxColumn, Me.NotesDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.OMSys_OrdersDBBindingSource
+        Me.DataGridView1.Enabled = False
         Me.DataGridView1.Location = New System.Drawing.Point(30, 107)
+        Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(1005, 580)
         Me.DataGridView1.TabIndex = 85
+        Me.DataGridView1.TabStop = False
         '
         'IDDataGridViewTextBoxColumn
         '
@@ -388,7 +398,7 @@ Partial Class frmMainScreen
         Me.Status_CMBox.Items.AddRange(New Object() {"PENDING", "PAID", "ACCEPTED"})
         Me.Status_CMBox.Location = New System.Drawing.Point(1247, 504)
         Me.Status_CMBox.Name = "Status_CMBox"
-        Me.Status_CMBox.Size = New System.Drawing.Size(134, 23)
+        Me.Status_CMBox.Size = New System.Drawing.Size(134, 21)
         Me.Status_CMBox.TabIndex = 86
         '
         'Label4
@@ -397,7 +407,7 @@ Partial Class frmMainScreen
         Me.Label4.ForeColor = System.Drawing.Color.Red
         Me.Label4.Location = New System.Drawing.Point(1213, 133)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(14, 16)
+        Me.Label4.Size = New System.Drawing.Size(11, 13)
         Me.Label4.TabIndex = 87
         Me.Label4.Text = "*"
         '
@@ -407,7 +417,7 @@ Partial Class frmMainScreen
         Me.Label5.ForeColor = System.Drawing.Color.Red
         Me.Label5.Location = New System.Drawing.Point(1207, 178)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(14, 16)
+        Me.Label5.Size = New System.Drawing.Size(11, 13)
         Me.Label5.TabIndex = 88
         Me.Label5.Text = "*"
         '
@@ -417,7 +427,7 @@ Partial Class frmMainScreen
         Me.Label6.ForeColor = System.Drawing.Color.Red
         Me.Label6.Location = New System.Drawing.Point(1151, 504)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(14, 16)
+        Me.Label6.Size = New System.Drawing.Size(11, 13)
         Me.Label6.TabIndex = 89
         Me.Label6.Text = "*"
         '
@@ -426,7 +436,7 @@ Partial Class frmMainScreen
         Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "ID", True))
         Me.IDTextBox.Location = New System.Drawing.Point(1247, 95)
         Me.IDTextBox.Name = "IDTextBox"
-        Me.IDTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.IDTextBox.Size = New System.Drawing.Size(100, 19)
         Me.IDTextBox.TabIndex = 91
         '
         'Label7
@@ -435,7 +445,7 @@ Partial Class frmMainScreen
         Me.Label7.ForeColor = System.Drawing.Color.Red
         Me.Label7.Location = New System.Drawing.Point(1159, 99)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(14, 16)
+        Me.Label7.Size = New System.Drawing.Size(11, 13)
         Me.Label7.TabIndex = 92
         Me.Label7.Text = "*"
         '
@@ -450,12 +460,32 @@ Partial Class frmMainScreen
         Me.TableAdapterManager.OMSys_StocksDBTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = OMSys.OMSysOrdersDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'btnPrevious
+        '
+        Me.btnPrevious.Location = New System.Drawing.Point(570, 709)
+        Me.btnPrevious.Name = "btnPrevious"
+        Me.btnPrevious.Size = New System.Drawing.Size(75, 23)
+        Me.btnPrevious.TabIndex = 93
+        Me.btnPrevious.Text = "Previous"
+        Me.btnPrevious.UseVisualStyleBackColor = True
+        '
+        'btnNext
+        '
+        Me.btnNext.Location = New System.Drawing.Point(679, 709)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(75, 23)
+        Me.btnNext.TabIndex = 94
+        Me.btnNext.Text = "Next"
+        Me.btnNext.UseVisualStyleBackColor = True
+        '
         'frmMainScreen
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1469, 749)
+        Me.Controls.Add(Me.btnNext)
+        Me.Controls.Add(Me.btnPrevious)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(IDLabel)
         Me.Controls.Add(Me.IDTextBox)
@@ -485,7 +515,7 @@ Partial Class frmMainScreen
         Me.Controls.Add(Me.btnAddOrder)
         Me.Controls.Add(Me.btnDeleteOrder)
         Me.Controls.Add(Me.btnUpdateOrder)
-        Me.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "frmMainScreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "OMSys"
@@ -529,4 +559,6 @@ Partial Class frmMainScreen
     Friend WithEvents ContactNumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NotesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnPrevious As Button
+    Friend WithEvents btnNext As Button
 End Class
