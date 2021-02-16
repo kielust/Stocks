@@ -13,7 +13,6 @@
 
     Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
         OMSys_OrdersDBBindingSource.AddNew()
-        btnUpdateOrder.Visible = True
     End Sub
 
     Private Sub btnDeleteOrder_Click_1(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click
@@ -37,10 +36,10 @@
             MessageBox.Show("Incomplete field/s.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             Try
+                OMSys_OrdersDBTableAdapter.Update(OMSysOrdersDBDataSet)
                 OMSys_OrdersDBBindingSource.EndEdit()
                 OMSys_OrdersDBTableAdapter.Update(OMSysOrdersDBDataSet)
                 MessageBox.Show("Data Saved.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                btnUpdateOrder.Visible = False
 
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)

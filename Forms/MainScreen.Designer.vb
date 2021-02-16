@@ -195,7 +195,6 @@ Partial Class frmMainScreen
         Me.btnUpdateOrder.TabIndex = 40
         Me.btnUpdateOrder.Text = "Save"
         Me.btnUpdateOrder.UseVisualStyleBackColor = False
-        Me.btnUpdateOrder.Visible = False
         '
         'Label1
         '
