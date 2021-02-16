@@ -30,9 +30,8 @@ Partial Class frmMainScreen
         Dim AddressLabel As System.Windows.Forms.Label
         Dim Contact_NumberLabel As System.Windows.Forms.Label
         Dim NotesLabel As System.Windows.Forms.Label
-        Dim StatusLabel As System.Windows.Forms.Label
         Dim IDLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim StatusLabel1 As System.Windows.Forms.Label
         Me.btnAddOrder = New System.Windows.Forms.Button()
         Me.btnDeleteOrder = New System.Windows.Forms.Button()
         Me.btnUpdateOrder = New System.Windows.Forms.Button()
@@ -40,34 +39,34 @@ Partial Class frmMainScreen
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Customer_NameTextBox = New System.Windows.Forms.TextBox()
-        Me.OMSys_OrdersDBBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.OMSysOrdersDBDataSet = New OMSys.OMSysOrdersDBDataSet()
         Me.Product_NameTextBox = New System.Windows.Forms.TextBox()
         Me.QuantityTextBox = New System.Windows.Forms.TextBox()
         Me.Total_PriceTextBox = New System.Windows.Forms.TextBox()
         Me.AddressTextBox = New System.Windows.Forms.TextBox()
         Me.Contact_NumberTextBox = New System.Windows.Forms.TextBox()
         Me.NotesTextBox = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CustomerNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.QuantityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TotalPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ContactNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NotesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Status_CMBox = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.IDTextBox = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.OMSys_OrdersV2DBDataGridView = New System.Windows.Forms.DataGridView()
+        Me.StatusTextBox = New System.Windows.Forms.TextBox()
+        Me.OMSys_OrdersV2DBBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.OMSysOrdersDBDataSet = New OMSys.OMSysOrdersDBDataSet()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OMSys_OrdersDBBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.OMSys_OrdersDBTableAdapter = New OMSys.OMSysOrdersDBDataSetTableAdapters.OMSys_OrdersDBTableAdapter()
         Me.TableAdapterManager = New OMSys.OMSysOrdersDBDataSetTableAdapters.TableAdapterManager()
-        Me.btnPrevious = New System.Windows.Forms.Button()
-        Me.btnNext = New System.Windows.Forms.Button()
+        Me.OMSys_OrdersV2DBTableAdapter = New OMSys.OMSysOrdersDBDataSetTableAdapters.OMSys_OrdersV2DBTableAdapter()
         Customer_NameLabel = New System.Windows.Forms.Label()
         Product_NameLabel = New System.Windows.Forms.Label()
         QuantityLabel = New System.Windows.Forms.Label()
@@ -75,11 +74,12 @@ Partial Class frmMainScreen
         AddressLabel = New System.Windows.Forms.Label()
         Contact_NumberLabel = New System.Windows.Forms.Label()
         NotesLabel = New System.Windows.Forms.Label()
-        StatusLabel = New System.Windows.Forms.Label()
         IDLabel = New System.Windows.Forms.Label()
-        CType(Me.OMSys_OrdersDBBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        StatusLabel1 = New System.Windows.Forms.Label()
+        CType(Me.OMSys_OrdersV2DBDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.OMSys_OrdersV2DBBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OMSysOrdersDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.OMSys_OrdersDBBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Customer_NameLabel
@@ -144,15 +144,6 @@ Partial Class frmMainScreen
         NotesLabel.Size = New System.Drawing.Size(38, 13)
         NotesLabel.TabIndex = 81
         NotesLabel.Text = "Notes:"
-        '
-        'StatusLabel
-        '
-        StatusLabel.AutoSize = True
-        StatusLabel.Location = New System.Drawing.Point(1092, 504)
-        StatusLabel.Name = "StatusLabel"
-        StatusLabel.Size = New System.Drawing.Size(40, 13)
-        StatusLabel.TabIndex = 83
-        StatusLabel.Text = "Status:"
         '
         'IDLabel
         '
@@ -228,25 +219,15 @@ Partial Class frmMainScreen
         '
         'Customer_NameTextBox
         '
-        Me.Customer_NameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Customer_Name", True))
+        Me.Customer_NameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Customer_Name", True))
         Me.Customer_NameTextBox.Location = New System.Drawing.Point(1247, 135)
         Me.Customer_NameTextBox.Name = "Customer_NameTextBox"
         Me.Customer_NameTextBox.Size = New System.Drawing.Size(192, 19)
         Me.Customer_NameTextBox.TabIndex = 70
         '
-        'OMSys_OrdersDBBindingSource
-        '
-        Me.OMSys_OrdersDBBindingSource.DataMember = "OMSys_OrdersDB"
-        Me.OMSys_OrdersDBBindingSource.DataSource = Me.OMSysOrdersDBDataSet
-        '
-        'OMSysOrdersDBDataSet
-        '
-        Me.OMSysOrdersDBDataSet.DataSetName = "OMSysOrdersDBDataSet"
-        Me.OMSysOrdersDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'Product_NameTextBox
         '
-        Me.Product_NameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Product_Name", True))
+        Me.Product_NameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Product_Name", True))
         Me.Product_NameTextBox.Location = New System.Drawing.Point(1247, 178)
         Me.Product_NameTextBox.Name = "Product_NameTextBox"
         Me.Product_NameTextBox.Size = New System.Drawing.Size(192, 19)
@@ -254,7 +235,7 @@ Partial Class frmMainScreen
         '
         'QuantityTextBox
         '
-        Me.QuantityTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Quantity", True))
+        Me.QuantityTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Quantity", True))
         Me.QuantityTextBox.Location = New System.Drawing.Point(1247, 223)
         Me.QuantityTextBox.Name = "QuantityTextBox"
         Me.QuantityTextBox.Size = New System.Drawing.Size(192, 19)
@@ -262,7 +243,7 @@ Partial Class frmMainScreen
         '
         'Total_PriceTextBox
         '
-        Me.Total_PriceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Total_Price", True))
+        Me.Total_PriceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Total_Price", True))
         Me.Total_PriceTextBox.Location = New System.Drawing.Point(1247, 268)
         Me.Total_PriceTextBox.Name = "Total_PriceTextBox"
         Me.Total_PriceTextBox.Size = New System.Drawing.Size(192, 19)
@@ -270,7 +251,7 @@ Partial Class frmMainScreen
         '
         'AddressTextBox
         '
-        Me.AddressTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Address", True))
+        Me.AddressTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Address", True))
         Me.AddressTextBox.Location = New System.Drawing.Point(1247, 311)
         Me.AddressTextBox.Name = "AddressTextBox"
         Me.AddressTextBox.Size = New System.Drawing.Size(192, 19)
@@ -278,7 +259,7 @@ Partial Class frmMainScreen
         '
         'Contact_NumberTextBox
         '
-        Me.Contact_NumberTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Contact_Number", True))
+        Me.Contact_NumberTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Contact_Number", True))
         Me.Contact_NumberTextBox.Location = New System.Drawing.Point(1247, 358)
         Me.Contact_NumberTextBox.Name = "Contact_NumberTextBox"
         Me.Contact_NumberTextBox.Size = New System.Drawing.Size(192, 19)
@@ -286,119 +267,12 @@ Partial Class frmMainScreen
         '
         'NotesTextBox
         '
-        Me.NotesTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Notes", True))
+        Me.NotesTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Notes", True))
         Me.NotesTextBox.Location = New System.Drawing.Point(1247, 405)
         Me.NotesTextBox.Multiline = True
         Me.NotesTextBox.Name = "NotesTextBox"
         Me.NotesTextBox.Size = New System.Drawing.Size(192, 81)
         Me.NotesTextBox.TabIndex = 82
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.AllowUserToResizeColumns = False
-        Me.DataGridView1.AllowUserToResizeRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.CustomerNameDataGridViewTextBoxColumn, Me.ProductNameDataGridViewTextBoxColumn, Me.QuantityDataGridViewTextBoxColumn, Me.TotalPriceDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.ContactNumberDataGridViewTextBoxColumn, Me.NotesDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.OMSys_OrdersDBBindingSource
-        Me.DataGridView1.Enabled = False
-        Me.DataGridView1.Location = New System.Drawing.Point(30, 107)
-        Me.DataGridView1.MultiSelect = False
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1005, 580)
-        Me.DataGridView1.TabIndex = 85
-        Me.DataGridView1.TabStop = False
-        '
-        'IDDataGridViewTextBoxColumn
-        '
-        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn.HeaderText = "Order ID"
-        Me.IDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
-        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IDDataGridViewTextBoxColumn.Width = 125
-        '
-        'CustomerNameDataGridViewTextBoxColumn
-        '
-        Me.CustomerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_Name"
-        Me.CustomerNameDataGridViewTextBoxColumn.HeaderText = "Customer Name"
-        Me.CustomerNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.CustomerNameDataGridViewTextBoxColumn.Name = "CustomerNameDataGridViewTextBoxColumn"
-        Me.CustomerNameDataGridViewTextBoxColumn.Width = 200
-        '
-        'ProductNameDataGridViewTextBoxColumn
-        '
-        Me.ProductNameDataGridViewTextBoxColumn.DataPropertyName = "Product_Name"
-        Me.ProductNameDataGridViewTextBoxColumn.HeaderText = "Product Name"
-        Me.ProductNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.ProductNameDataGridViewTextBoxColumn.Name = "ProductNameDataGridViewTextBoxColumn"
-        Me.ProductNameDataGridViewTextBoxColumn.Width = 200
-        '
-        'QuantityDataGridViewTextBoxColumn
-        '
-        Me.QuantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity"
-        Me.QuantityDataGridViewTextBoxColumn.HeaderText = "Quantity"
-        Me.QuantityDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.QuantityDataGridViewTextBoxColumn.Name = "QuantityDataGridViewTextBoxColumn"
-        Me.QuantityDataGridViewTextBoxColumn.Width = 125
-        '
-        'TotalPriceDataGridViewTextBoxColumn
-        '
-        Me.TotalPriceDataGridViewTextBoxColumn.DataPropertyName = "Total_Price"
-        DataGridViewCellStyle1.Format = "C2"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.TotalPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
-        Me.TotalPriceDataGridViewTextBoxColumn.HeaderText = "Total Price"
-        Me.TotalPriceDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.TotalPriceDataGridViewTextBoxColumn.Name = "TotalPriceDataGridViewTextBoxColumn"
-        Me.TotalPriceDataGridViewTextBoxColumn.Width = 125
-        '
-        'AddressDataGridViewTextBoxColumn
-        '
-        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "Address"
-        Me.AddressDataGridViewTextBoxColumn.HeaderText = "Address"
-        Me.AddressDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
-        Me.AddressDataGridViewTextBoxColumn.Width = 200
-        '
-        'ContactNumberDataGridViewTextBoxColumn
-        '
-        Me.ContactNumberDataGridViewTextBoxColumn.DataPropertyName = "Contact_Number"
-        Me.ContactNumberDataGridViewTextBoxColumn.HeaderText = "Contact Number"
-        Me.ContactNumberDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.ContactNumberDataGridViewTextBoxColumn.Name = "ContactNumberDataGridViewTextBoxColumn"
-        Me.ContactNumberDataGridViewTextBoxColumn.Width = 125
-        '
-        'NotesDataGridViewTextBoxColumn
-        '
-        Me.NotesDataGridViewTextBoxColumn.DataPropertyName = "Notes"
-        Me.NotesDataGridViewTextBoxColumn.HeaderText = "Notes"
-        Me.NotesDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.NotesDataGridViewTextBoxColumn.Name = "NotesDataGridViewTextBoxColumn"
-        Me.NotesDataGridViewTextBoxColumn.Width = 200
-        '
-        'StatusDataGridViewTextBoxColumn
-        '
-        Me.StatusDataGridViewTextBoxColumn.DataPropertyName = "Status"
-        Me.StatusDataGridViewTextBoxColumn.HeaderText = "Status"
-        Me.StatusDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.StatusDataGridViewTextBoxColumn.Name = "StatusDataGridViewTextBoxColumn"
-        Me.StatusDataGridViewTextBoxColumn.Width = 125
-        '
-        'Status_CMBox
-        '
-        Me.Status_CMBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "Status", True))
-        Me.Status_CMBox.FormattingEnabled = True
-        Me.Status_CMBox.Items.AddRange(New Object() {"PENDING", "PAID", "ACCEPTED"})
-        Me.Status_CMBox.Location = New System.Drawing.Point(1247, 504)
-        Me.Status_CMBox.Name = "Status_CMBox"
-        Me.Status_CMBox.Size = New System.Drawing.Size(134, 21)
-        Me.Status_CMBox.TabIndex = 86
         '
         'Label4
         '
@@ -432,7 +306,7 @@ Partial Class frmMainScreen
         '
         'IDTextBox
         '
-        Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersDBBindingSource, "ID", True))
+        Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "ID", True))
         Me.IDTextBox.Location = New System.Drawing.Point(1247, 95)
         Me.IDTextBox.Name = "IDTextBox"
         Me.IDTextBox.Size = New System.Drawing.Size(100, 19)
@@ -448,6 +322,103 @@ Partial Class frmMainScreen
         Me.Label7.TabIndex = 92
         Me.Label7.Text = "*"
         '
+        'OMSys_OrdersV2DBDataGridView
+        '
+        Me.OMSys_OrdersV2DBDataGridView.AutoGenerateColumns = False
+        Me.OMSys_OrdersV2DBDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.OMSys_OrdersV2DBDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9})
+        Me.OMSys_OrdersV2DBDataGridView.DataSource = Me.OMSys_OrdersV2DBBindingSource
+        Me.OMSys_OrdersV2DBDataGridView.Location = New System.Drawing.Point(43, 104)
+        Me.OMSys_OrdersV2DBDataGridView.Name = "OMSys_OrdersV2DBDataGridView"
+        Me.OMSys_OrdersV2DBDataGridView.Size = New System.Drawing.Size(1024, 599)
+        Me.OMSys_OrdersV2DBDataGridView.TabIndex = 94
+        '
+        'StatusLabel1
+        '
+        StatusLabel1.AutoSize = True
+        StatusLabel1.Location = New System.Drawing.Point(1092, 504)
+        StatusLabel1.Name = "StatusLabel1"
+        StatusLabel1.Size = New System.Drawing.Size(40, 13)
+        StatusLabel1.TabIndex = 94
+        StatusLabel1.Text = "Status:"
+        '
+        'StatusTextBox
+        '
+        Me.StatusTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Status", True))
+        Me.StatusTextBox.Location = New System.Drawing.Point(1247, 501)
+        Me.StatusTextBox.Name = "StatusTextBox"
+        Me.StatusTextBox.Size = New System.Drawing.Size(100, 19)
+        Me.StatusTextBox.TabIndex = 95
+        '
+        'OMSys_OrdersV2DBBindingSource
+        '
+        Me.OMSys_OrdersV2DBBindingSource.DataMember = "OMSys_OrdersV2DB"
+        Me.OMSys_OrdersV2DBBindingSource.DataSource = Me.OMSysOrdersDBDataSet
+        '
+        'OMSysOrdersDBDataSet
+        '
+        Me.OMSysOrdersDBDataSet.DataSetName = "OMSysOrdersDBDataSet"
+        Me.OMSysOrdersDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Customer_Name"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Customer_Name"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Product_Name"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Product_Name"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Quantity"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Quantity"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Total_Price"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Total_Price"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Address"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Address"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Contact_Number"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Contact_Number"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Notes"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Notes"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "Status"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Status"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        '
+        'OMSys_OrdersDBBindingSource
+        '
+        Me.OMSys_OrdersDBBindingSource.DataMember = "OMSys_OrdersDB"
+        Me.OMSys_OrdersDBBindingSource.DataSource = Me.OMSysOrdersDBDataSet
+        '
         'OMSys_OrdersDBTableAdapter
         '
         Me.OMSys_OrdersDBTableAdapter.ClearBeforeFill = True
@@ -456,43 +427,29 @@ Partial Class frmMainScreen
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.OMSys_OrdersDBTableAdapter = Me.OMSys_OrdersDBTableAdapter
+        Me.TableAdapterManager.OMSys_OrdersV2DBTableAdapter = Nothing
         Me.TableAdapterManager.OMSys_StocksDBTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = OMSys.OMSysOrdersDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'btnPrevious
+        'OMSys_OrdersV2DBTableAdapter
         '
-        Me.btnPrevious.Location = New System.Drawing.Point(570, 709)
-        Me.btnPrevious.Name = "btnPrevious"
-        Me.btnPrevious.Size = New System.Drawing.Size(75, 23)
-        Me.btnPrevious.TabIndex = 93
-        Me.btnPrevious.Text = "Previous"
-        Me.btnPrevious.UseVisualStyleBackColor = True
-        '
-        'btnNext
-        '
-        Me.btnNext.Location = New System.Drawing.Point(679, 709)
-        Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(75, 23)
-        Me.btnNext.TabIndex = 94
-        Me.btnNext.Text = "Next"
-        Me.btnNext.UseVisualStyleBackColor = True
+        Me.OMSys_OrdersV2DBTableAdapter.ClearBeforeFill = True
         '
         'frmMainScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1469, 749)
-        Me.Controls.Add(Me.btnNext)
-        Me.Controls.Add(Me.btnPrevious)
+        Me.ClientSize = New System.Drawing.Size(1469, 752)
+        Me.Controls.Add(StatusLabel1)
+        Me.Controls.Add(Me.StatusTextBox)
+        Me.Controls.Add(Me.OMSys_OrdersV2DBDataGridView)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(IDLabel)
         Me.Controls.Add(Me.IDTextBox)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Status_CMBox)
-        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Customer_NameLabel)
         Me.Controls.Add(Me.Customer_NameTextBox)
         Me.Controls.Add(Product_NameLabel)
@@ -507,7 +464,6 @@ Partial Class frmMainScreen
         Me.Controls.Add(Me.Contact_NumberTextBox)
         Me.Controls.Add(NotesLabel)
         Me.Controls.Add(Me.NotesTextBox)
-        Me.Controls.Add(StatusLabel)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
@@ -518,9 +474,10 @@ Partial Class frmMainScreen
         Me.Name = "frmMainScreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "OMSys"
-        CType(Me.OMSys_OrdersDBBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.OMSys_OrdersV2DBDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.OMSys_OrdersV2DBBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OMSysOrdersDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.OMSys_OrdersDBBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -542,22 +499,22 @@ Partial Class frmMainScreen
     Friend WithEvents AddressTextBox As TextBox
     Friend WithEvents Contact_NumberTextBox As TextBox
     Friend WithEvents NotesTextBox As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Status_CMBox As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents IDTextBox As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CustomerNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ProductNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents QuantityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TotalPriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents AddressDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ContactNumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NotesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents StatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents btnPrevious As Button
-    Friend WithEvents btnNext As Button
+    Friend WithEvents OMSys_OrdersV2DBBindingSource As BindingSource
+    Friend WithEvents OMSys_OrdersV2DBTableAdapter As OMSysOrdersDBDataSetTableAdapters.OMSys_OrdersV2DBTableAdapter
+    Friend WithEvents OMSys_OrdersV2DBDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents StatusTextBox As TextBox
 End Class

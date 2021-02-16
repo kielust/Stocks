@@ -1,18 +1,18 @@
 ﻿Public Class frmMainScreen
     Private Sub frmMainScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'OMSysOrdersDBDataSet.OMSys_OrdersDB' table. You can move, or remove it, as needed.
-        Me.OMSys_OrdersDBTableAdapter.Fill(Me.OMSysOrdersDBDataSet.OMSys_OrdersDB)
+        'TODO: This line of code loads data into the 'OMSysOrdersDBDataSet.OMSys_OrdersV2DB' table. You can move, or remove it, as needed.
+        Me.OMSys_OrdersV2DBTableAdapter.Fill(Me.OMSysOrdersDBDataSet.OMSys_OrdersV2DB)
 
     End Sub
 
     Private Sub OMSys_OrdersDBBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
-        Me.OMSys_OrdersDBBindingSource.EndEdit()
+        Me.OMSys_OrdersV2DBBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.OMSysOrdersDBDataSet)
     End Sub
 
     Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
-        OMSys_OrdersDBBindingSource.AddNew()
+        OMSys_OrdersV2DBBindingSource.AddNew()
     End Sub
 
     Private Sub btnDeleteOrder_Click_1(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click
@@ -20,8 +20,8 @@
         If choice = DialogResult.Yes Then
 
             Try
-                OMSys_OrdersDBBindingSource.RemoveCurrent()
-                OMSys_OrdersDBTableAdapter.Update(OMSysOrdersDBDataSet)
+                OMSys_OrdersV2DBBindingSource.RemoveCurrent()
+                OMSys_OrdersV2DBTableAdapter.Update(OMSysOrdersDBDataSet)
             Catch ex As Exception
 
             End Try
@@ -31,14 +31,14 @@
 
     Private Sub btnUpdateOrder_Click_1(sender As Object, e As EventArgs) Handles btnUpdateOrder.Click
         If IDTextBox.Text = "" Or Customer_NameTextBox.Text = "" Or Product_NameTextBox.Text = "" Or
-            QuantityTextBox.Text = "" Or Status_CMBox.Text = "" Then
+            QuantityTextBox.Text = "" Then
 
             MessageBox.Show("Incomplete field/s.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             Try
-                OMSys_OrdersDBTableAdapter.Update(OMSysOrdersDBDataSet)
-                OMSys_OrdersDBBindingSource.EndEdit()
-                OMSys_OrdersDBTableAdapter.Update(OMSysOrdersDBDataSet)
+                OMSys_OrdersV2DBTableAdapter.Update(OMSysOrdersDBDataSet)
+                OMSys_OrdersV2DBBindingSource.EndEdit()
+                OMSys_OrdersV2DBTableAdapter.Update(OMSysOrdersDBDataSet)
                 MessageBox.Show("Data Saved.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Catch ex As Exception
@@ -46,13 +46,7 @@
             End Try
         End If
     End Sub
-    Private Sub btnPrevious_Click(sender As Object, e As EventArgs) Handles btnPrevious.Click
-        OMSys_OrdersDBBindingSource.MovePrevious()
-    End Sub
 
-    Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-        OMSys_OrdersDBBindingSource.MoveNext()
-    End Sub
 
 
 
