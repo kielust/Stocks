@@ -27,6 +27,7 @@ Partial Class frmMain
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnManageOrder = New System.Windows.Forms.Button()
+        Me.btnLogout = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnManageStock
@@ -34,7 +35,7 @@ Partial Class frmMain
         Me.btnManageStock.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnManageStock.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManageStock.ForeColor = System.Drawing.Color.White
-        Me.btnManageStock.Location = New System.Drawing.Point(224, 371)
+        Me.btnManageStock.Location = New System.Drawing.Point(224, 365)
         Me.btnManageStock.Name = "btnManageStock"
         Me.btnManageStock.Size = New System.Drawing.Size(221, 60)
         Me.btnManageStock.TabIndex = 9
@@ -83,12 +84,25 @@ Partial Class frmMain
         Me.btnManageOrder.Text = "Manage Orders"
         Me.btnManageOrder.UseVisualStyleBackColor = False
         '
+        'btnLogout
+        '
+        Me.btnLogout.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.btnLogout.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.ForeColor = System.Drawing.Color.White
+        Me.btnLogout.Location = New System.Drawing.Point(224, 431)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(221, 60)
+        Me.btnLogout.TabIndex = 11
+        Me.btnLogout.Text = "Logout"
+        Me.btnLogout.UseVisualStyleBackColor = False
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(679, 548)
+        Me.Controls.Add(Me.btnLogout)
         Me.Controls.Add(Me.btnManageOrder)
         Me.Controls.Add(Me.btnManageStock)
         Me.Controls.Add(Me.Label3)
@@ -107,4 +121,5 @@ Partial Class frmMain
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents btnManageOrder As Button
+    Friend WithEvents btnLogout As Button
 End Class
