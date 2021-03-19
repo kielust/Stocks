@@ -32,6 +32,7 @@ Partial Class frmMain
         '
         'btnManageStock
         '
+        Me.btnManageStock.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnManageStock.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnManageStock.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManageStock.ForeColor = System.Drawing.Color.White
@@ -44,6 +45,7 @@ Partial Class frmMain
         '
         'Label3
         '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(254, 243)
@@ -54,6 +56,7 @@ Partial Class frmMain
         '
         'Label2
         '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(222, 182)
@@ -64,9 +67,10 @@ Partial Class frmMain
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(173, 86)
+        Me.Label1.Location = New System.Drawing.Point(176, 86)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(315, 96)
         Me.Label1.TabIndex = 6
@@ -74,6 +78,7 @@ Partial Class frmMain
         '
         'btnManageOrder
         '
+        Me.btnManageOrder.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnManageOrder.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnManageOrder.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManageOrder.ForeColor = System.Drawing.Color.White
@@ -86,6 +91,7 @@ Partial Class frmMain
         '
         'btnLogout
         '
+        Me.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnLogout.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnLogout.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogout.ForeColor = System.Drawing.Color.White
@@ -98,8 +104,8 @@ Partial Class frmMain
         '
         'frmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(679, 548)
         Me.Controls.Add(Me.btnLogout)

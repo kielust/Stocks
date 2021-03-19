@@ -1,5 +1,5 @@
 ﻿Public Class ForgotPass
-    Public userPass2 As String
+    'Public userPass2 As String
     Private Sub btnEnterKey_Click(sender As Object, e As EventArgs) Handles btnEnterKey.Click
         If txtMasterKey.Text = "10aKNLjJgl26" Then
 
@@ -9,6 +9,8 @@
         End If
     End Sub
     Private Sub btnSubmitNewPass_Click(sender As Object, e As EventArgs) Handles btnSubmitNewPass.Click
+        Dim userPass2 As String
+
         If txtNewPass.Text = txtConfirmPass.Text Then
             userPass2 = txtConfirmPass.Text
             'frmLogin.userPass = userPass2

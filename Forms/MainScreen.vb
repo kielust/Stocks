@@ -31,7 +31,7 @@
 
     Private Sub btnUpdateOrder_Click_1(sender As Object, e As EventArgs) Handles btnUpdateOrder.Click
         If IDTextBox.Text = "" Or Customer_NameTextBox.Text = "" Or Product_NameTextBox.Text = "" Or
-            QuantityTextBox.Text = "" Then
+            QuantityTextBox.Text = "" Or StatusTextBox.Text = "" Then
 
             MessageBox.Show("Please fill the required field/s.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else

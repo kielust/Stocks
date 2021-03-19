@@ -1,7 +1,7 @@
 ﻿Public Class frmLogin
-    Public userPass As String
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim mainScreen As New frmMain
+        Dim userPass As String
 
         userPass = My.Settings.Password
 

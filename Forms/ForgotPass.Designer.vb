@@ -40,6 +40,8 @@ Partial Class ForgotPass
         '
         'panelMasterKey
         '
+        Me.panelMasterKey.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.panelMasterKey.Controls.Add(Me.panelResetPass)
         Me.panelMasterKey.Controls.Add(Me.btnEnterKey)
         Me.panelMasterKey.Controls.Add(Me.txtMasterKey)
         Me.panelMasterKey.Controls.Add(Me.Label2)
@@ -51,13 +53,14 @@ Partial Class ForgotPass
         '
         'panelResetPass
         '
+        Me.panelResetPass.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.panelResetPass.Controls.Add(Me.btnSubmitNewPass)
         Me.panelResetPass.Controls.Add(Me.txtConfirmPass)
         Me.panelResetPass.Controls.Add(Me.txtNewPass)
         Me.panelResetPass.Controls.Add(Me.Label5)
         Me.panelResetPass.Controls.Add(Me.Label4)
         Me.panelResetPass.Controls.Add(Me.Label3)
-        Me.panelResetPass.Location = New System.Drawing.Point(12, 12)
+        Me.panelResetPass.Location = New System.Drawing.Point(0, 0)
         Me.panelResetPass.Name = "panelResetPass"
         Me.panelResetPass.Size = New System.Drawing.Size(534, 397)
         Me.panelResetPass.TabIndex = 8
@@ -68,7 +71,7 @@ Partial Class ForgotPass
         Me.btnSubmitNewPass.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnSubmitNewPass.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubmitNewPass.ForeColor = System.Drawing.Color.White
-        Me.btnSubmitNewPass.Location = New System.Drawing.Point(215, 260)
+        Me.btnSubmitNewPass.Location = New System.Drawing.Point(222, 259)
         Me.btnSubmitNewPass.Name = "btnSubmitNewPass"
         Me.btnSubmitNewPass.Size = New System.Drawing.Size(90, 39)
         Me.btnSubmitNewPass.TabIndex = 5
@@ -77,7 +80,7 @@ Partial Class ForgotPass
         '
         'txtConfirmPass
         '
-        Me.txtConfirmPass.Location = New System.Drawing.Point(264, 183)
+        Me.txtConfirmPass.Location = New System.Drawing.Point(261, 182)
         Me.txtConfirmPass.Name = "txtConfirmPass"
         Me.txtConfirmPass.Size = New System.Drawing.Size(220, 28)
         Me.txtConfirmPass.TabIndex = 4
@@ -85,7 +88,7 @@ Partial Class ForgotPass
         '
         'txtNewPass
         '
-        Me.txtNewPass.Location = New System.Drawing.Point(264, 134)
+        Me.txtNewPass.Location = New System.Drawing.Point(261, 133)
         Me.txtNewPass.Name = "txtNewPass"
         Me.txtNewPass.Size = New System.Drawing.Size(220, 28)
         Me.txtNewPass.TabIndex = 3
@@ -94,7 +97,7 @@ Partial Class ForgotPass
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(50, 185)
+        Me.Label5.Location = New System.Drawing.Point(47, 184)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(161, 21)
         Me.Label5.TabIndex = 2
@@ -103,7 +106,7 @@ Partial Class ForgotPass
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(50, 134)
+        Me.Label4.Location = New System.Drawing.Point(47, 133)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(136, 21)
         Me.Label4.TabIndex = 1
@@ -112,18 +115,19 @@ Partial Class ForgotPass
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(195, 50)
+        Me.Label3.Location = New System.Drawing.Point(199, 47)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(139, 21)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Reset Password"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'btnEnterKey
         '
         Me.btnEnterKey.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnEnterKey.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEnterKey.ForeColor = System.Drawing.Color.White
-        Me.btnEnterKey.Location = New System.Drawing.Point(225, 183)
+        Me.btnEnterKey.Location = New System.Drawing.Point(212, 183)
         Me.btnEnterKey.Name = "btnEnterKey"
         Me.btnEnterKey.Size = New System.Drawing.Size(90, 37)
         Me.btnEnterKey.TabIndex = 7
@@ -132,7 +136,7 @@ Partial Class ForgotPass
         '
         'txtMasterKey
         '
-        Me.txtMasterKey.Location = New System.Drawing.Point(146, 125)
+        Me.txtMasterKey.Location = New System.Drawing.Point(133, 125)
         Me.txtMasterKey.Margin = New System.Windows.Forms.Padding(4)
         Me.txtMasterKey.Name = "txtMasterKey"
         Me.txtMasterKey.Size = New System.Drawing.Size(256, 28)
@@ -143,31 +147,32 @@ Partial Class ForgotPass
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(7, 340)
+        Me.Label2.Location = New System.Drawing.Point(11, 340)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(380, 19)
+        Me.Label2.Size = New System.Drawing.Size(386, 19)
         Me.Label2.TabIndex = 5
-        Me.Label2.Text = "To get the master key, please contact the developers."
+        Me.Label2.Text = "*To get the master key, please contact the developers."
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 37)
+        Me.Label1.Location = New System.Drawing.Point(11, 37)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(503, 21)
+        Me.Label1.Size = New System.Drawing.Size(509, 21)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Please enter the master key to reset your current password:"
+        Me.Label1.Text = "Please enter the master key to reset your current password*:"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'ForgotPass
         '
         Me.AcceptButton = Me.btnEnterKey
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(558, 421)
-        Me.Controls.Add(Me.panelResetPass)
         Me.Controls.Add(Me.panelMasterKey)
         Me.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
