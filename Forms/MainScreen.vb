@@ -49,7 +49,7 @@
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         If txtSearch.Text = "" Then
-            Call displayAll()
+            Call doNothing()
             Exit Sub
         Else
             OMSys_OrdersV2DBBindingSource.Filter = "(Convert(ID, 'System.String') LIKE '" & txtSearch.Text & "')" &
@@ -67,7 +67,12 @@
             End If
         End If
     End Sub
+    Private Sub doNothing()
+
+    End Sub
     Private Sub displayAll()
+        txtSearch.Text = ""
+
         Me.OMSys_OrdersV2DBTableAdapter.Fill(Me.OMSysOrdersDBDataSet.OMSys_OrdersV2DB)
         Me.OMSys_OrdersV2DBBindingSource.RemoveFilter()
     End Sub

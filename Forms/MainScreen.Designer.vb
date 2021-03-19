@@ -532,9 +532,9 @@ Partial Class frmMainScreen
         'txtSearch
         '
         Me.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtSearch.Location = New System.Drawing.Point(315, 74)
+        Me.txtSearch.Location = New System.Drawing.Point(304, 74)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(234, 23)
+        Me.txtSearch.Size = New System.Drawing.Size(245, 23)
         Me.txtSearch.TabIndex = 97
         '
         'btnSearch
@@ -568,11 +568,11 @@ Partial Class frmMainScreen
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Century Gothic", 5.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(312, 58)
+        Me.Label9.Location = New System.Drawing.Point(301, 58)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(233, 13)
+        Me.Label9.Size = New System.Drawing.Size(252, 13)
         Me.Label9.TabIndex = 100
-        Me.Label9.Text = "(Customer name, Product name, Address or Status)"
+        Me.Label9.Text = "(ID, Customer Name, Product Name, Address or Status)"
         '
         'frmMainScreen
         '

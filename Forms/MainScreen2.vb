@@ -53,4 +53,36 @@
     Private Sub Date_AddedDateTimePicker_ValueChanged(sender As Object, e As EventArgs) Handles Date_AddedDateTimePicker.ValueChanged
         yes = True
     End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        If txtSearch.Text = "" Then
+            Call doNothing()
+            Exit Sub
+        Else
+            OMSysStocksDBBindingSource.Filter = "(Convert(ID, 'System.String') LIKE '" & txtSearch.Text & "')" &
+                "OR (Material_Name LIKE '" & txtSearch.Text & "')"
+
+            If OMSysStocksDBBindingSource.Count <> 0 Then
+                With DataGridView1
+                    .DataSource = OMSysStocksDBBindingSource
+                End With
+            Else
+                MessageBox.Show("Nothing found.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                'OMSys_OrdersV2DBBindingSource = Nothing
+                Call displayAll()
+            End If
+        End If
+    End Sub
+    Private Sub doNothing()
+
+    End Sub
+    Private Sub displayAll()
+        txtSearch.Text = ""
+
+        Me.OMSys_StocksDBTableAdapter.Fill(Me.OMSysOrdersDBDataSet.OMSys_StocksDB)
+        Me.OMSysStocksDBBindingSource.RemoveFilter()
+    End Sub
+    Private Sub btnViewAll_Click(sender As Object, e As EventArgs) Handles btnViewAll.Click
+        Call displayAll()
+    End Sub
 End Class
