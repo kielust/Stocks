@@ -16,7 +16,7 @@
 
     End Sub
     Private Sub btnDeleteOrder_Click_1(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click
-        Dim choice As DialogResult = MessageBox.Show("Are you sure you want to delete this stock?", "Delete", MessageBoxButtons.YesNo)
+        Dim choice As DialogResult = MessageBox.Show("Are you sure you want to delete this product?", "Delete", MessageBoxButtons.YesNo)
         If choice = DialogResult.Yes Then
 
             Try
@@ -42,7 +42,7 @@
                 OMSys_StocksDBTableAdapter.Update(OMSysOrdersDBDataSet)
                 OMSysStocksDBBindingSource.EndEdit()
                 OMSys_StocksDBTableAdapter.Update(OMSysOrdersDBDataSet)
-                MessageBox.Show("Data Saved.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Product saved.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
             End Try

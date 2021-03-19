@@ -68,6 +68,10 @@ Partial Class frmMainScreen
         Me.TableAdapterManager = New OMSys.OMSysOrdersDBDataSetTableAdapters.TableAdapterManager()
         Me.OMSys_OrdersV2DBTableAdapter = New OMSys.OMSysOrdersDBDataSetTableAdapters.OMSys_OrdersV2DBTableAdapter()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.btnViewAll = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
         Customer_NameLabel = New System.Windows.Forms.Label()
         Product_NameLabel = New System.Windows.Forms.Label()
         QuantityLabel = New System.Windows.Forms.Label()
@@ -495,12 +499,57 @@ Partial Class frmMainScreen
         Me.Label8.TabIndex = 96
         Me.Label8.Text = "*"
         '
+        'txtSearch
+        '
+        Me.txtSearch.Location = New System.Drawing.Point(315, 72)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(234, 23)
+        Me.txtSearch.TabIndex = 97
+        '
+        'btnSearch
+        '
+        Me.btnSearch.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.btnSearch.ForeColor = System.Drawing.Color.White
+        Me.btnSearch.Location = New System.Drawing.Point(556, 59)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(113, 43)
+        Me.btnSearch.TabIndex = 98
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = False
+        '
+        'btnViewAll
+        '
+        Me.btnViewAll.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.btnViewAll.ForeColor = System.Drawing.Color.White
+        Me.btnViewAll.Location = New System.Drawing.Point(677, 59)
+        Me.btnViewAll.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnViewAll.Name = "btnViewAll"
+        Me.btnViewAll.Size = New System.Drawing.Size(113, 43)
+        Me.btnViewAll.TabIndex = 99
+        Me.btnViewAll.Text = "View All"
+        Me.btnViewAll.UseVisualStyleBackColor = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 5.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(312, 56)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(233, 13)
+        Me.Label9.TabIndex = 100
+        Me.Label9.Text = "(Customer name, Product name, Address or Status)"
+        '
         'frmMainScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1443, 697)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.btnViewAll)
+        Me.Controls.Add(Me.btnSearch)
+        Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(StatusLabel1)
         Me.Controls.Add(Me.StatusTextBox)
@@ -580,4 +629,8 @@ Partial Class frmMainScreen
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents Label8 As Label
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents btnViewAll As Button
+    Friend WithEvents Label9 As Label
 End Class
