@@ -11,7 +11,9 @@
     Private Sub btnSubmitNewPass_Click(sender As Object, e As EventArgs) Handles btnSubmitNewPass.Click
         If txtNewPass.Text = txtConfirmPass.Text Then
             userPass2 = txtConfirmPass.Text
-            frmLogin.userPass = userPass2
+            'frmLogin.userPass = userPass2
+            My.Settings.Password = userPass2
+            My.Settings.Save()
             Dim okay As DialogResult = MessageBox.Show("New password created successfully.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
             If okay = DialogResult.OK Then
                 Close()

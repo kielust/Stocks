@@ -1,7 +1,9 @@
 ﻿Public Class frmLogin
-    Public userPass As String = "1"
+    Public userPass As String
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim mainScreen As New frmMain
+
+        userPass = My.Settings.Password
 
         If txtUsername.Text = "" Then
             MessageBox.Show("Please input a username.", "Incomplete", MessageBoxButtons.OK, MessageBoxIcon.Warning)
