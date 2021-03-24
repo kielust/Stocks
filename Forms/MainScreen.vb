@@ -1,10 +1,18 @@
 ﻿Public Class frmMainScreen
+    Sub dgv_styleRow()
+        For i As Integer = 0 To OMSys_OrdersV2DBDataGridView.RowCount - 1
+            If i Mod 2 = 0 Then
+                OMSys_OrdersV2DBDataGridView.Rows(i).DefaultCellStyle.BackColor = Color.White
+            Else
+                OMSys_OrdersV2DBDataGridView.Rows(i).DefaultCellStyle.BackColor = Color.LightGray
+            End If
+        Next
+    End Sub
     Private Sub frmMainScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'OMSysOrdersDBDataSet.OMSys_OrdersV2DB' table. You can move, or remove it, as needed.
         Me.OMSys_OrdersV2DBTableAdapter.Fill(Me.OMSysOrdersDBDataSet.OMSys_OrdersV2DB)
-
+        dgv_styleRow()
     End Sub
-
     Private Sub OMSys_OrdersDBBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.OMSys_OrdersV2DBBindingSource.EndEdit()
@@ -31,7 +39,7 @@
 
     Private Sub btnUpdateOrder_Click_1(sender As Object, e As EventArgs) Handles btnUpdateOrder.Click
         If IDTextBox.Text = "" Or Customer_NameTextBox.Text = "" Or Product_NameTextBox.Text = "" Or
-            QuantityTextBox.Text = "" Or StatusTextBox.Text = "" Then
+            QuantityTextBox.Text = "" Or cboStatus.Text = "" Then
 
             MessageBox.Show("Please fill the required field/s.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
@@ -79,5 +87,16 @@
 
     Private Sub btnViewAll_Click(sender As Object, e As EventArgs) Handles btnViewAll.Click
         Call displayAll()
+    End Sub
+
+    Private Sub QuantityTextBox_TextChanged(sender As Object, e As EventArgs) Handles QuantityTextBox.TextChanged
+        Dim total As Decimal
+
+        total = Val(txtPrice.Text) * Val(QuantityTextBox.Text)
+        Total_PriceTextBox.Text = total
+    End Sub
+
+    Private Sub OMSys_OrdersV2DBDataGridView_DataSourceChanged(sender As Object, e As EventArgs) Handles OMSys_OrdersV2DBDataGridView.DataSourceChanged
+        dgv_styleRow()
     End Sub
 End Class

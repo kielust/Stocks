@@ -39,7 +39,7 @@ Partial Class frmMain
         Me.btnManageStock.Location = New System.Drawing.Point(224, 365)
         Me.btnManageStock.Name = "btnManageStock"
         Me.btnManageStock.Size = New System.Drawing.Size(221, 60)
-        Me.btnManageStock.TabIndex = 9
+        Me.btnManageStock.TabIndex = 1
         Me.btnManageStock.Text = "Manage Stocks"
         Me.btnManageStock.UseVisualStyleBackColor = False
         '
@@ -85,7 +85,7 @@ Partial Class frmMain
         Me.btnManageOrder.Location = New System.Drawing.Point(224, 299)
         Me.btnManageOrder.Name = "btnManageOrder"
         Me.btnManageOrder.Size = New System.Drawing.Size(221, 60)
-        Me.btnManageOrder.TabIndex = 10
+        Me.btnManageOrder.TabIndex = 0
         Me.btnManageOrder.Text = "Manage Orders"
         Me.btnManageOrder.UseVisualStyleBackColor = False
         '
@@ -98,7 +98,7 @@ Partial Class frmMain
         Me.btnLogout.Location = New System.Drawing.Point(224, 431)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Size = New System.Drawing.Size(221, 60)
-        Me.btnLogout.TabIndex = 11
+        Me.btnLogout.TabIndex = 2
         Me.btnLogout.Text = "Logout"
         Me.btnLogout.UseVisualStyleBackColor = False
         '

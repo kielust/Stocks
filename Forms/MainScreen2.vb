@@ -1,8 +1,17 @@
 ﻿Public Class frmMainScreen2
     Dim yes As Boolean = False
+    Sub dgv_styleRow()
+        For i As Integer = 0 To DataGridView1.RowCount - 1
+            If i Mod 2 = 0 Then
+                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.White
+            Else
+                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.LightGray
+            End If
+        Next
+    End Sub
     Private Sub frmMainScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.OMSys_StocksDBTableAdapter.Fill(Me.OMSysOrdersDBDataSet.OMSys_StocksDB)
-
+        dgv_styleRow()
     End Sub
 
     Private Sub OMSysStocksDBBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
@@ -84,5 +93,9 @@
     End Sub
     Private Sub btnViewAll_Click(sender As Object, e As EventArgs) Handles btnViewAll.Click
         Call displayAll()
+    End Sub
+
+    Private Sub DataGridView1_DataSourceChanged(sender As Object, e As EventArgs) Handles DataGridView1.DataSourceChanged
+        dgv_styleRow()
     End Sub
 End Class

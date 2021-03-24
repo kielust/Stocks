@@ -73,7 +73,7 @@ Partial Class frmLogin
         Me.txtUsername.Location = New System.Drawing.Point(265, 290)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(160, 32)
-        Me.txtUsername.TabIndex = 3
+        Me.txtUsername.TabIndex = 0
         '
         'txtPassword
         '
@@ -82,7 +82,7 @@ Partial Class frmLogin
         Me.txtPassword.Location = New System.Drawing.Point(265, 350)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(160, 32)
-        Me.txtPassword.TabIndex = 4
+        Me.txtPassword.TabIndex = 1
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'btnLogin
@@ -94,7 +94,7 @@ Partial Class frmLogin
         Me.btnLogin.Location = New System.Drawing.Point(265, 403)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(160, 41)
-        Me.btnLogin.TabIndex = 5
+        Me.btnLogin.TabIndex = 2
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
@@ -129,7 +129,7 @@ Partial Class frmLogin
         Me.LinkLabel1.Location = New System.Drawing.Point(280, 489)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(127, 19)
-        Me.LinkLabel1.TabIndex = 9
+        Me.LinkLabel1.TabIndex = 3
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Forgot Password?"
         '

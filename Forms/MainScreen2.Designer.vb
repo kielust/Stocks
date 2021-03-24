@@ -30,8 +30,9 @@ Partial Class frmMainScreen2
         Dim Unit_PriceLabel As System.Windows.Forms.Label
         Dim IDLabel As System.Windows.Forms.Label
         Dim Label4 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnAddOrder = New System.Windows.Forms.Button()
         Me.btnDeleteOrder = New System.Windows.Forms.Button()
         Me.btnUpdateOrder = New System.Windows.Forms.Button()
@@ -84,7 +85,7 @@ Partial Class frmMainScreen2
         '
         DateAdded_NameLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         DateAdded_NameLabel.AutoSize = True
-        DateAdded_NameLabel.Location = New System.Drawing.Point(1084, 136)
+        DateAdded_NameLabel.Location = New System.Drawing.Point(1084, 140)
         DateAdded_NameLabel.Name = "DateAdded_NameLabel"
         DateAdded_NameLabel.Size = New System.Drawing.Size(99, 19)
         DateAdded_NameLabel.TabIndex = 69
@@ -94,7 +95,7 @@ Partial Class frmMainScreen2
         '
         Material_NameLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         Material_NameLabel.AutoSize = True
-        Material_NameLabel.Location = New System.Drawing.Point(1084, 165)
+        Material_NameLabel.Location = New System.Drawing.Point(1084, 169)
         Material_NameLabel.Name = "Material_NameLabel"
         Material_NameLabel.Size = New System.Drawing.Size(116, 19)
         Material_NameLabel.TabIndex = 71
@@ -104,7 +105,7 @@ Partial Class frmMainScreen2
         '
         StockLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         StockLabel.AutoSize = True
-        StockLabel.Location = New System.Drawing.Point(1084, 194)
+        StockLabel.Location = New System.Drawing.Point(1084, 198)
         StockLabel.Name = "StockLabel"
         StockLabel.Size = New System.Drawing.Size(50, 19)
         StockLabel.TabIndex = 73
@@ -121,7 +122,7 @@ Partial Class frmMainScreen2
         '
         Unit_PriceLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         Unit_PriceLabel.AutoSize = True
-        Unit_PriceLabel.Location = New System.Drawing.Point(1084, 252)
+        Unit_PriceLabel.Location = New System.Drawing.Point(1084, 256)
         Unit_PriceLabel.Name = "Unit_PriceLabel"
         Unit_PriceLabel.Size = New System.Drawing.Size(76, 19)
         Unit_PriceLabel.TabIndex = 77
@@ -131,7 +132,7 @@ Partial Class frmMainScreen2
         '
         IDLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         IDLabel.AutoSize = True
-        IDLabel.Location = New System.Drawing.Point(1084, 107)
+        IDLabel.Location = New System.Drawing.Point(1084, 111)
         IDLabel.Name = "IDLabel"
         IDLabel.Size = New System.Drawing.Size(69, 19)
         IDLabel.TabIndex = 90
@@ -155,7 +156,7 @@ Partial Class frmMainScreen2
         Me.btnAddOrder.Location = New System.Drawing.Point(922, 55)
         Me.btnAddOrder.Name = "btnAddOrder"
         Me.btnAddOrder.Size = New System.Drawing.Size(113, 43)
-        Me.btnAddOrder.TabIndex = 51
+        Me.btnAddOrder.TabIndex = 3
         Me.btnAddOrder.Text = "New Stock"
         Me.btnAddOrder.UseVisualStyleBackColor = False
         '
@@ -167,7 +168,7 @@ Partial Class frmMainScreen2
         Me.btnDeleteOrder.Location = New System.Drawing.Point(1276, 303)
         Me.btnDeleteOrder.Name = "btnDeleteOrder"
         Me.btnDeleteOrder.Size = New System.Drawing.Size(85, 43)
-        Me.btnDeleteOrder.TabIndex = 41
+        Me.btnDeleteOrder.TabIndex = 11
         Me.btnDeleteOrder.Text = "Delete"
         Me.btnDeleteOrder.UseVisualStyleBackColor = False
         '
@@ -179,7 +180,7 @@ Partial Class frmMainScreen2
         Me.btnUpdateOrder.Location = New System.Drawing.Point(1145, 303)
         Me.btnUpdateOrder.Name = "btnUpdateOrder"
         Me.btnUpdateOrder.Size = New System.Drawing.Size(85, 43)
-        Me.btnUpdateOrder.TabIndex = 40
+        Me.btnUpdateOrder.TabIndex = 10
         Me.btnUpdateOrder.Text = "Save"
         Me.btnUpdateOrder.UseVisualStyleBackColor = False
         '
@@ -223,7 +224,7 @@ Partial Class frmMainScreen2
         Me.Material_NameTextBox.Location = New System.Drawing.Point(1227, 165)
         Me.Material_NameTextBox.Name = "Material_NameTextBox"
         Me.Material_NameTextBox.Size = New System.Drawing.Size(192, 23)
-        Me.Material_NameTextBox.TabIndex = 72
+        Me.Material_NameTextBox.TabIndex = 6
         '
         'OMSysStocksDBBindingSource
         '
@@ -242,7 +243,7 @@ Partial Class frmMainScreen2
         Me.StockTextBox.Location = New System.Drawing.Point(1227, 194)
         Me.StockTextBox.Name = "StockTextBox"
         Me.StockTextBox.Size = New System.Drawing.Size(156, 23)
-        Me.StockTextBox.TabIndex = 74
+        Me.StockTextBox.TabIndex = 7
         '
         'Selling_PriceTextBox
         '
@@ -251,7 +252,7 @@ Partial Class frmMainScreen2
         Me.Selling_PriceTextBox.Location = New System.Drawing.Point(1227, 223)
         Me.Selling_PriceTextBox.Name = "Selling_PriceTextBox"
         Me.Selling_PriceTextBox.Size = New System.Drawing.Size(156, 23)
-        Me.Selling_PriceTextBox.TabIndex = 76
+        Me.Selling_PriceTextBox.TabIndex = 8
         '
         'Unit_PriceTextBox
         '
@@ -260,18 +261,33 @@ Partial Class frmMainScreen2
         Me.Unit_PriceTextBox.Location = New System.Drawing.Point(1227, 252)
         Me.Unit_PriceTextBox.Name = "Unit_PriceTextBox"
         Me.Unit_PriceTextBox.Size = New System.Drawing.Size(156, 23)
-        Me.Unit_PriceTextBox.TabIndex = 78
+        Me.Unit_PriceTextBox.TabIndex = 9
         '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.ColumnHeadersHeight = 29
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.DateAddedDataGridViewTextBoxColumn, Me.MaterialNameDataGridViewTextBoxColumn, Me.StockDataGridViewTextBoxColumn, Me.SellingPriceDataGridViewTextBoxColumn, Me.UnitPriceDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.OMSysStocksDBBindingSource
+        Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.Location = New System.Drawing.Point(30, 107)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(1005, 536)
@@ -293,6 +309,7 @@ Partial Class frmMainScreen2
         Me.DateAddedDataGridViewTextBoxColumn.HeaderText = "Date Added"
         Me.DateAddedDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.DateAddedDataGridViewTextBoxColumn.Name = "DateAddedDataGridViewTextBoxColumn"
+        Me.DateAddedDataGridViewTextBoxColumn.ReadOnly = True
         '
         'MaterialNameDataGridViewTextBoxColumn
         '
@@ -301,6 +318,7 @@ Partial Class frmMainScreen2
         Me.MaterialNameDataGridViewTextBoxColumn.HeaderText = "Material Name"
         Me.MaterialNameDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.MaterialNameDataGridViewTextBoxColumn.Name = "MaterialNameDataGridViewTextBoxColumn"
+        Me.MaterialNameDataGridViewTextBoxColumn.ReadOnly = True
         '
         'StockDataGridViewTextBoxColumn
         '
@@ -308,30 +326,33 @@ Partial Class frmMainScreen2
         Me.StockDataGridViewTextBoxColumn.HeaderText = "Stock"
         Me.StockDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.StockDataGridViewTextBoxColumn.Name = "StockDataGridViewTextBoxColumn"
+        Me.StockDataGridViewTextBoxColumn.ReadOnly = True
         Me.StockDataGridViewTextBoxColumn.Width = 125
         '
         'SellingPriceDataGridViewTextBoxColumn
         '
         Me.SellingPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
         Me.SellingPriceDataGridViewTextBoxColumn.DataPropertyName = "Selling_Price"
-        DataGridViewCellStyle17.Format = "C2"
-        Me.SellingPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle2.Format = "C2"
+        Me.SellingPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
         Me.SellingPriceDataGridViewTextBoxColumn.HeaderText = "Selling Price"
         Me.SellingPriceDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.SellingPriceDataGridViewTextBoxColumn.Name = "SellingPriceDataGridViewTextBoxColumn"
-        Me.SellingPriceDataGridViewTextBoxColumn.Width = 118
+        Me.SellingPriceDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SellingPriceDataGridViewTextBoxColumn.Width = 116
         '
         'UnitPriceDataGridViewTextBoxColumn
         '
         Me.UnitPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
         Me.UnitPriceDataGridViewTextBoxColumn.DataPropertyName = "Unit_Price"
-        DataGridViewCellStyle18.Format = "C2"
-        DataGridViewCellStyle18.NullValue = Nothing
-        Me.UnitPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle3.Format = "C2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.UnitPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
         Me.UnitPriceDataGridViewTextBoxColumn.HeaderText = "Unit Price"
         Me.UnitPriceDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.UnitPriceDataGridViewTextBoxColumn.Name = "UnitPriceDataGridViewTextBoxColumn"
-        Me.UnitPriceDataGridViewTextBoxColumn.Width = 101
+        Me.UnitPriceDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UnitPriceDataGridViewTextBoxColumn.Width = 99
         '
         'IDTextBox
         '
@@ -340,7 +361,7 @@ Partial Class frmMainScreen2
         Me.IDTextBox.Location = New System.Drawing.Point(1227, 107)
         Me.IDTextBox.Name = "IDTextBox"
         Me.IDTextBox.Size = New System.Drawing.Size(100, 23)
-        Me.IDTextBox.TabIndex = 91
+        Me.IDTextBox.TabIndex = 4
         '
         'Label7
         '
@@ -364,8 +385,8 @@ Partial Class frmMainScreen2
         Me.Date_AddedDateTimePicker.Name = "Date_AddedDateTimePicker"
         Me.Date_AddedDateTimePicker.ShowCheckBox = True
         Me.Date_AddedDateTimePicker.Size = New System.Drawing.Size(192, 23)
-        Me.Date_AddedDateTimePicker.TabIndex = 93
-        Me.Date_AddedDateTimePicker.Value = New Date(2020, 1, 1, 0, 0, 0, 0)
+        Me.Date_AddedDateTimePicker.TabIndex = 5
+        Me.Date_AddedDateTimePicker.Value = New Date(2021, 3, 24, 0, 0, 0, 0)
         '
         'OMSys_OrdersDBBindingSource
         '
@@ -463,7 +484,7 @@ Partial Class frmMainScreen2
         Me.btnViewAll.Margin = New System.Windows.Forms.Padding(4)
         Me.btnViewAll.Name = "btnViewAll"
         Me.btnViewAll.Size = New System.Drawing.Size(113, 43)
-        Me.btnViewAll.TabIndex = 103
+        Me.btnViewAll.TabIndex = 2
         Me.btnViewAll.Text = "View All"
         Me.btnViewAll.UseVisualStyleBackColor = False
         '
@@ -476,7 +497,7 @@ Partial Class frmMainScreen2
         Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(113, 43)
-        Me.btnSearch.TabIndex = 102
+        Me.btnSearch.TabIndex = 1
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = False
         '
@@ -486,7 +507,7 @@ Partial Class frmMainScreen2
         Me.txtSearch.Location = New System.Drawing.Point(316, 72)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(234, 23)
-        Me.txtSearch.TabIndex = 101
+        Me.txtSearch.TabIndex = 0
         '
         'frmMainScreen2
         '
