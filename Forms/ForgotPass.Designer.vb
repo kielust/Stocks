@@ -171,6 +171,7 @@ Partial Class ForgotPass
         Me.AcceptButton = Me.btnEnterKey
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(558, 421)
         Me.Controls.Add(Me.panelMasterKey)
