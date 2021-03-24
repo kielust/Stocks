@@ -22,7 +22,7 @@
 
     Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
         OMSysStocksDBBindingSource.AddNew()
-
+        dgv_styleRow()
     End Sub
     Private Sub btnDeleteOrder_Click_1(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click
         Dim choice As DialogResult = MessageBox.Show("Are you sure you want to delete this product?", "Delete", MessageBoxButtons.YesNo)
@@ -31,6 +31,7 @@
             Try
                 OMSysStocksDBBindingSource.RemoveCurrent()
                 OMSys_StocksDBTableAdapter.Update(OMSysOrdersDBDataSet)
+                dgv_styleRow()
             Catch ex As Exception
 
             End Try
@@ -52,6 +53,7 @@
                 OMSysStocksDBBindingSource.EndEdit()
                 OMSys_StocksDBTableAdapter.Update(OMSysOrdersDBDataSet)
                 MessageBox.Show("Product saved.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                dgv_styleRow()
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
             End Try

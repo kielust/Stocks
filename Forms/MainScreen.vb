@@ -21,6 +21,7 @@
 
     Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
         OMSys_OrdersV2DBBindingSource.AddNew()
+        dgv_styleRow()
     End Sub
 
     Private Sub btnDeleteOrder_Click_1(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click
@@ -30,6 +31,7 @@
             Try
                 OMSys_OrdersV2DBBindingSource.RemoveCurrent()
                 OMSys_OrdersV2DBTableAdapter.Update(OMSysOrdersDBDataSet)
+                dgv_styleRow()
             Catch ex As Exception
 
             End Try
@@ -48,7 +50,7 @@
                 OMSys_OrdersV2DBBindingSource.EndEdit()
                 OMSys_OrdersV2DBTableAdapter.Update(OMSysOrdersDBDataSet)
                 MessageBox.Show("Order saved.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+                dgv_styleRow()
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
             End Try
