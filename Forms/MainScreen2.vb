@@ -30,10 +30,6 @@
 
         End If
 
-
-
-
-
         OMSysStocksDBBindingSource.MoveLast()
 
     End Sub

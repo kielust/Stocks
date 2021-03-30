@@ -23,10 +23,10 @@ Partial Class btnAdd
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnAddOrder = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -95,7 +95,7 @@ Partial Class btnAdd
         Me.btnAddOrder.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnAddOrder.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnAddOrder.ForeColor = System.Drawing.Color.White
-        Me.btnAddOrder.Location = New System.Drawing.Point(1979, 237)
+        Me.btnAddOrder.Location = New System.Drawing.Point(1712, 237)
         Me.btnAddOrder.Name = "btnAddOrder"
         Me.btnAddOrder.Size = New System.Drawing.Size(90, 34)
         Me.btnAddOrder.TabIndex = 3
@@ -107,7 +107,7 @@ Partial Class btnAdd
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(42, 95)
+        Me.Label1.Location = New System.Drawing.Point(53, 121)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(193, 45)
         Me.Label1.TabIndex = 0
@@ -118,7 +118,7 @@ Partial Class btnAdd
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(61, 885)
+        Me.Label2.Location = New System.Drawing.Point(36, 927)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(172, 16)
         Me.Label2.TabIndex = 59
@@ -129,7 +129,7 @@ Partial Class btnAdd
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(37, 794)
+        Me.Label3.Location = New System.Drawing.Point(12, 836)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(250, 78)
         Me.Label3.TabIndex = 58
@@ -155,42 +155,42 @@ Partial Class btnAdd
         Me.OMSys_OrdersV2DBDataGridView.AutoGenerateColumns = False
         Me.OMSys_OrdersV2DBDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
         Me.OMSys_OrdersV2DBDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.OMSys_OrdersV2DBDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.OMSys_OrdersV2DBDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.OMSys_OrdersV2DBDataGridView.ColumnHeadersHeight = 29
         Me.OMSys_OrdersV2DBDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.OMSys_OrdersV2DBDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.Date_Added, Me.DataGridViewTextBoxColumn3, Me.Customer_FirstName, Me.Customer_MiddleName, Me.Customer_LastName, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.Date_Delivered})
         Me.OMSys_OrdersV2DBDataGridView.DataSource = Me.OMSys_OrdersV2DBBindingSource
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.OMSys_OrdersV2DBDataGridView.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.OMSys_OrdersV2DBDataGridView.DefaultCellStyle = DataGridViewCellStyle3
         Me.OMSys_OrdersV2DBDataGridView.EnableHeadersVisualStyles = False
-        Me.OMSys_OrdersV2DBDataGridView.Location = New System.Drawing.Point(50, 150)
+        Me.OMSys_OrdersV2DBDataGridView.Location = New System.Drawing.Point(53, 179)
         Me.OMSys_OrdersV2DBDataGridView.Name = "OMSys_OrdersV2DBDataGridView"
         Me.OMSys_OrdersV2DBDataGridView.ReadOnly = True
         Me.OMSys_OrdersV2DBDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.OMSys_OrdersV2DBDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.OMSys_OrdersV2DBDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.OMSys_OrdersV2DBDataGridView.RowHeadersVisible = False
         Me.OMSys_OrdersV2DBDataGridView.RowHeadersWidth = 51
-        Me.OMSys_OrdersV2DBDataGridView.Size = New System.Drawing.Size(1680, 445)
+        Me.OMSys_OrdersV2DBDataGridView.Size = New System.Drawing.Size(1080, 445)
         Me.OMSys_OrdersV2DBDataGridView.TabIndex = 94
         '
         'DataGridViewTextBoxColumn1
@@ -251,9 +251,9 @@ Partial Class btnAdd
         'DataGridViewTextBoxColumn5
         '
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "Total_Price"
-        DataGridViewCellStyle6.Format = "C2"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Format = "C2"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn5.HeaderText = "Total Price"
         Me.DataGridViewTextBoxColumn5.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
@@ -327,7 +327,7 @@ Partial Class btnAdd
         'txtSearch
         '
         Me.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtSearch.Location = New System.Drawing.Point(240, 118)
+        Me.txtSearch.Location = New System.Drawing.Point(251, 144)
         Me.txtSearch.Margin = New System.Windows.Forms.Padding(2)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(197, 20)
@@ -338,7 +338,7 @@ Partial Class btnAdd
         Me.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnSearch.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnSearch.ForeColor = System.Drawing.Color.White
-        Me.btnSearch.Location = New System.Drawing.Point(442, 108)
+        Me.btnSearch.Location = New System.Drawing.Point(453, 134)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(90, 34)
         Me.btnSearch.TabIndex = 1
@@ -350,7 +350,7 @@ Partial Class btnAdd
         Me.btnViewAll.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnViewAll.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnViewAll.ForeColor = System.Drawing.Color.White
-        Me.btnViewAll.Location = New System.Drawing.Point(539, 108)
+        Me.btnViewAll.Location = New System.Drawing.Point(550, 134)
         Me.btnViewAll.Name = "btnViewAll"
         Me.btnViewAll.Size = New System.Drawing.Size(90, 34)
         Me.btnViewAll.TabIndex = 2
@@ -362,7 +362,7 @@ Partial Class btnAdd
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Century Gothic", 5.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(240, 107)
+        Me.Label9.Location = New System.Drawing.Point(251, 133)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(197, 9)
@@ -509,7 +509,7 @@ Partial Class btnAdd
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(1102, 632)
+        Me.Label4.Location = New System.Drawing.Point(289, 756)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 16)
         Me.Label4.TabIndex = 117
@@ -518,7 +518,7 @@ Partial Class btnAdd
         'txt_Address
         '
         Me.txt_Address.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Address", True))
-        Me.txt_Address.Location = New System.Drawing.Point(1157, 628)
+        Me.txt_Address.Location = New System.Drawing.Point(344, 752)
         Me.txt_Address.Name = "txt_Address"
         Me.txt_Address.Size = New System.Drawing.Size(200, 20)
         Me.txt_Address.TabIndex = 118
@@ -526,7 +526,7 @@ Partial Class btnAdd
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(1051, 673)
+        Me.Label5.Location = New System.Drawing.Point(238, 797)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(100, 16)
         Me.Label5.TabIndex = 119
@@ -535,7 +535,7 @@ Partial Class btnAdd
         'txt_ContactNumber
         '
         Me.txt_ContactNumber.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Contact_Number", True))
-        Me.txt_ContactNumber.Location = New System.Drawing.Point(1157, 669)
+        Me.txt_ContactNumber.Location = New System.Drawing.Point(344, 793)
         Me.txt_ContactNumber.Name = "txt_ContactNumber"
         Me.txt_ContactNumber.Size = New System.Drawing.Size(200, 20)
         Me.txt_ContactNumber.TabIndex = 120
@@ -562,7 +562,7 @@ Partial Class btnAdd
         Me.btnAddOrder1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnAddOrder1.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnAddOrder1.ForeColor = System.Drawing.Color.White
-        Me.btnAddOrder1.Location = New System.Drawing.Point(1640, 106)
+        Me.btnAddOrder1.Location = New System.Drawing.Point(1043, 130)
         Me.btnAddOrder1.Name = "btnAddOrder1"
         Me.btnAddOrder1.Size = New System.Drawing.Size(90, 34)
         Me.btnAddOrder1.TabIndex = 123
@@ -574,7 +574,7 @@ Partial Class btnAdd
         Me.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnSave.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(1640, 625)
+        Me.btnSave.Location = New System.Drawing.Point(1018, 773)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(90, 34)
         Me.btnSave.TabIndex = 124
@@ -586,7 +586,7 @@ Partial Class btnAdd
         Me.cmb_Status.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Status", True))
         Me.cmb_Status.FormattingEnabled = True
         Me.cmb_Status.Items.AddRange(New Object() {"CANCELLED", "PENDING", "PAID", "ACCEPTED"})
-        Me.cmb_Status.Location = New System.Drawing.Point(1157, 708)
+        Me.cmb_Status.Location = New System.Drawing.Point(344, 832)
         Me.cmb_Status.Name = "cmb_Status"
         Me.cmb_Status.Size = New System.Drawing.Size(121, 23)
         Me.cmb_Status.TabIndex = 125
@@ -594,7 +594,7 @@ Partial Class btnAdd
         'lblStatus
         '
         Me.lblStatus.AutoSize = True
-        Me.lblStatus.Location = New System.Drawing.Point(1110, 712)
+        Me.lblStatus.Location = New System.Drawing.Point(297, 836)
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(41, 16)
         Me.lblStatus.TabIndex = 126
@@ -605,7 +605,7 @@ Partial Class btnAdd
         Me.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnDelete.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnDelete.ForeColor = System.Drawing.Color.White
-        Me.btnDelete.Location = New System.Drawing.Point(1640, 681)
+        Me.btnDelete.Location = New System.Drawing.Point(1018, 829)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(90, 34)
         Me.btnDelete.TabIndex = 127
@@ -615,7 +615,7 @@ Partial Class btnAdd
         'lblNotes
         '
         Me.lblNotes.AutoSize = True
-        Me.lblNotes.Location = New System.Drawing.Point(299, 794)
+        Me.lblNotes.Location = New System.Drawing.Point(627, 773)
         Me.lblNotes.Name = "lblNotes"
         Me.lblNotes.Size = New System.Drawing.Size(34, 16)
         Me.lblNotes.TabIndex = 128
@@ -624,9 +624,9 @@ Partial Class btnAdd
         'RichTextBox1
         '
         Me.RichTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Notes", True))
-        Me.RichTextBox1.Location = New System.Drawing.Point(344, 776)
+        Me.RichTextBox1.Location = New System.Drawing.Point(667, 773)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(684, 134)
+        Me.RichTextBox1.Size = New System.Drawing.Size(282, 134)
         Me.RichTextBox1.TabIndex = 129
         Me.RichTextBox1.Text = ""
         '
@@ -636,7 +636,7 @@ Partial Class btnAdd
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1775, 958)
+        Me.ClientSize = New System.Drawing.Size(1240, 958)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.lblNotes)
         Me.Controls.Add(Me.btnDelete)
