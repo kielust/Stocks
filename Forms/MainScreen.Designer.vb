@@ -82,6 +82,8 @@ Partial Class btnAdd
         Me.cmb_Status = New System.Windows.Forms.ComboBox()
         Me.lblStatus = New System.Windows.Forms.Label()
         Me.btnDelete = New System.Windows.Forms.Button()
+        Me.lblNotes = New System.Windows.Forms.Label()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         CType(Me.OMSys_OrdersV2DBBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OMSysOrdersDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OMSys_OrdersV2DBDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,7 +95,7 @@ Partial Class btnAdd
         Me.btnAddOrder.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnAddOrder.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnAddOrder.ForeColor = System.Drawing.Color.White
-        Me.btnAddOrder.Location = New System.Drawing.Point(2046, 81)
+        Me.btnAddOrder.Location = New System.Drawing.Point(1979, 237)
         Me.btnAddOrder.Name = "btnAddOrder"
         Me.btnAddOrder.Size = New System.Drawing.Size(90, 34)
         Me.btnAddOrder.TabIndex = 3
@@ -105,7 +107,7 @@ Partial Class btnAdd
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(82, 16)
+        Me.Label1.Location = New System.Drawing.Point(42, 95)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(193, 45)
         Me.Label1.TabIndex = 0
@@ -116,7 +118,7 @@ Partial Class btnAdd
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(97, 616)
+        Me.Label2.Location = New System.Drawing.Point(61, 885)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(172, 16)
         Me.Label2.TabIndex = 59
@@ -127,7 +129,7 @@ Partial Class btnAdd
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(73, 526)
+        Me.Label3.Location = New System.Drawing.Point(37, 794)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(250, 78)
         Me.Label3.TabIndex = 58
@@ -145,6 +147,10 @@ Partial Class btnAdd
         '
         'OMSys_OrdersV2DBDataGridView
         '
+        Me.OMSys_OrdersV2DBDataGridView.AllowUserToAddRows = False
+        Me.OMSys_OrdersV2DBDataGridView.AllowUserToDeleteRows = False
+        Me.OMSys_OrdersV2DBDataGridView.AllowUserToResizeColumns = False
+        Me.OMSys_OrdersV2DBDataGridView.AllowUserToResizeRows = False
         Me.OMSys_OrdersV2DBDataGridView.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.OMSys_OrdersV2DBDataGridView.AutoGenerateColumns = False
         Me.OMSys_OrdersV2DBDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
@@ -170,7 +176,7 @@ Partial Class btnAdd
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.OMSys_OrdersV2DBDataGridView.DefaultCellStyle = DataGridViewCellStyle7
         Me.OMSys_OrdersV2DBDataGridView.EnableHeadersVisualStyles = False
-        Me.OMSys_OrdersV2DBDataGridView.Location = New System.Drawing.Point(86, 72)
+        Me.OMSys_OrdersV2DBDataGridView.Location = New System.Drawing.Point(50, 150)
         Me.OMSys_OrdersV2DBDataGridView.Name = "OMSys_OrdersV2DBDataGridView"
         Me.OMSys_OrdersV2DBDataGridView.ReadOnly = True
         Me.OMSys_OrdersV2DBDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -321,7 +327,7 @@ Partial Class btnAdd
         'txtSearch
         '
         Me.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtSearch.Location = New System.Drawing.Point(321, 42)
+        Me.txtSearch.Location = New System.Drawing.Point(240, 118)
         Me.txtSearch.Margin = New System.Windows.Forms.Padding(2)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(197, 20)
@@ -332,7 +338,7 @@ Partial Class btnAdd
         Me.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnSearch.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnSearch.ForeColor = System.Drawing.Color.White
-        Me.btnSearch.Location = New System.Drawing.Point(523, 32)
+        Me.btnSearch.Location = New System.Drawing.Point(442, 108)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(90, 34)
         Me.btnSearch.TabIndex = 1
@@ -344,7 +350,7 @@ Partial Class btnAdd
         Me.btnViewAll.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnViewAll.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnViewAll.ForeColor = System.Drawing.Color.White
-        Me.btnViewAll.Location = New System.Drawing.Point(620, 32)
+        Me.btnViewAll.Location = New System.Drawing.Point(539, 108)
         Me.btnViewAll.Name = "btnViewAll"
         Me.btnViewAll.Size = New System.Drawing.Size(90, 34)
         Me.btnViewAll.TabIndex = 2
@@ -356,7 +362,7 @@ Partial Class btnAdd
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Century Gothic", 5.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(321, 31)
+        Me.Label9.Location = New System.Drawing.Point(240, 107)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(197, 9)
@@ -366,7 +372,7 @@ Partial Class btnAdd
         'lbl_OrderID
         '
         Me.lbl_OrderID.AutoSize = True
-        Me.lbl_OrderID.Location = New System.Drawing.Point(323, 542)
+        Me.lbl_OrderID.Location = New System.Drawing.Point(69, 635)
         Me.lbl_OrderID.Name = "lbl_OrderID"
         Me.lbl_OrderID.Size = New System.Drawing.Size(53, 16)
         Me.lbl_OrderID.TabIndex = 101
@@ -375,7 +381,7 @@ Partial Class btnAdd
         'txt_ID
         '
         Me.txt_ID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "ID", True))
-        Me.txt_ID.Location = New System.Drawing.Point(394, 537)
+        Me.txt_ID.Location = New System.Drawing.Point(128, 631)
         Me.txt_ID.Name = "txt_ID"
         Me.txt_ID.ReadOnly = True
         Me.txt_ID.Size = New System.Drawing.Size(100, 20)
@@ -384,7 +390,7 @@ Partial Class btnAdd
         'lbl_DateAdded
         '
         Me.lbl_DateAdded.AutoSize = True
-        Me.lbl_DateAdded.Location = New System.Drawing.Point(528, 579)
+        Me.lbl_DateAdded.Location = New System.Drawing.Point(262, 673)
         Me.lbl_DateAdded.Name = "lbl_DateAdded"
         Me.lbl_DateAdded.Size = New System.Drawing.Size(76, 16)
         Me.lbl_DateAdded.TabIndex = 103
@@ -393,7 +399,7 @@ Partial Class btnAdd
         'DateTimePicker1
         '
         Me.DateTimePicker1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Date_Added", True))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(610, 575)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(344, 669)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 104
@@ -401,7 +407,7 @@ Partial Class btnAdd
         'lbl_ProductName
         '
         Me.lbl_ProductName.AutoSize = True
-        Me.lbl_ProductName.Location = New System.Drawing.Point(517, 541)
+        Me.lbl_ProductName.Location = New System.Drawing.Point(251, 635)
         Me.lbl_ProductName.Name = "lbl_ProductName"
         Me.lbl_ProductName.Size = New System.Drawing.Size(87, 16)
         Me.lbl_ProductName.TabIndex = 105
@@ -410,7 +416,7 @@ Partial Class btnAdd
         'txt_ProductName
         '
         Me.txt_ProductName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Product_Name", True))
-        Me.txt_ProductName.Location = New System.Drawing.Point(610, 538)
+        Me.txt_ProductName.Location = New System.Drawing.Point(344, 632)
         Me.txt_ProductName.Name = "txt_ProductName"
         Me.txt_ProductName.Size = New System.Drawing.Size(200, 20)
         Me.txt_ProductName.TabIndex = 106
@@ -418,7 +424,7 @@ Partial Class btnAdd
         'lbl_FirstName
         '
         Me.lbl_FirstName.AutoSize = True
-        Me.lbl_FirstName.Location = New System.Drawing.Point(865, 537)
+        Me.lbl_FirstName.Location = New System.Drawing.Point(599, 631)
         Me.lbl_FirstName.Name = "lbl_FirstName"
         Me.lbl_FirstName.Size = New System.Drawing.Size(62, 16)
         Me.lbl_FirstName.TabIndex = 107
@@ -427,7 +433,7 @@ Partial Class btnAdd
         'lbl_MiddleName
         '
         Me.lbl_MiddleName.AutoSize = True
-        Me.lbl_MiddleName.Location = New System.Drawing.Point(845, 579)
+        Me.lbl_MiddleName.Location = New System.Drawing.Point(579, 674)
         Me.lbl_MiddleName.Name = "lbl_MiddleName"
         Me.lbl_MiddleName.Size = New System.Drawing.Size(82, 16)
         Me.lbl_MiddleName.TabIndex = 108
@@ -436,7 +442,7 @@ Partial Class btnAdd
         'lbl_LastName
         '
         Me.lbl_LastName.AutoSize = True
-        Me.lbl_LastName.Location = New System.Drawing.Point(862, 617)
+        Me.lbl_LastName.Location = New System.Drawing.Point(596, 711)
         Me.lbl_LastName.Name = "lbl_LastName"
         Me.lbl_LastName.Size = New System.Drawing.Size(65, 16)
         Me.lbl_LastName.TabIndex = 109
@@ -445,7 +451,7 @@ Partial Class btnAdd
         'txt_FirstName
         '
         Me.txt_FirstName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Customer_FirstName", True))
-        Me.txt_FirstName.Location = New System.Drawing.Point(933, 537)
+        Me.txt_FirstName.Location = New System.Drawing.Point(667, 631)
         Me.txt_FirstName.Name = "txt_FirstName"
         Me.txt_FirstName.Size = New System.Drawing.Size(120, 20)
         Me.txt_FirstName.TabIndex = 110
@@ -453,7 +459,7 @@ Partial Class btnAdd
         'txt_MiddleName
         '
         Me.txt_MiddleName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Customer_MiddleName", True))
-        Me.txt_MiddleName.Location = New System.Drawing.Point(933, 575)
+        Me.txt_MiddleName.Location = New System.Drawing.Point(667, 669)
         Me.txt_MiddleName.Name = "txt_MiddleName"
         Me.txt_MiddleName.Size = New System.Drawing.Size(120, 20)
         Me.txt_MiddleName.TabIndex = 111
@@ -461,7 +467,7 @@ Partial Class btnAdd
         'txt_LastName
         '
         Me.txt_LastName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Customer_LastName", True))
-        Me.txt_LastName.Location = New System.Drawing.Point(933, 613)
+        Me.txt_LastName.Location = New System.Drawing.Point(667, 707)
         Me.txt_LastName.Name = "txt_LastName"
         Me.txt_LastName.Size = New System.Drawing.Size(120, 20)
         Me.txt_LastName.TabIndex = 112
@@ -469,7 +475,7 @@ Partial Class btnAdd
         'lbl_Quantity
         '
         Me.lbl_Quantity.AutoSize = True
-        Me.lbl_Quantity.Location = New System.Drawing.Point(1098, 537)
+        Me.lbl_Quantity.Location = New System.Drawing.Point(832, 631)
         Me.lbl_Quantity.Name = "lbl_Quantity"
         Me.lbl_Quantity.Size = New System.Drawing.Size(56, 16)
         Me.lbl_Quantity.TabIndex = 113
@@ -478,7 +484,7 @@ Partial Class btnAdd
         'txt_Quantity
         '
         Me.txt_Quantity.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Quantity", True))
-        Me.txt_Quantity.Location = New System.Drawing.Point(1160, 536)
+        Me.txt_Quantity.Location = New System.Drawing.Point(894, 630)
         Me.txt_Quantity.Name = "txt_Quantity"
         Me.txt_Quantity.Size = New System.Drawing.Size(120, 20)
         Me.txt_Quantity.TabIndex = 114
@@ -486,7 +492,7 @@ Partial Class btnAdd
         'lbl_TotalPrice
         '
         Me.lbl_TotalPrice.AutoSize = True
-        Me.lbl_TotalPrice.Location = New System.Drawing.Point(1091, 578)
+        Me.lbl_TotalPrice.Location = New System.Drawing.Point(825, 672)
         Me.lbl_TotalPrice.Name = "lbl_TotalPrice"
         Me.lbl_TotalPrice.Size = New System.Drawing.Size(63, 16)
         Me.lbl_TotalPrice.TabIndex = 115
@@ -495,7 +501,7 @@ Partial Class btnAdd
         'txt_TotalPrice
         '
         Me.txt_TotalPrice.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Total_Price", True))
-        Me.txt_TotalPrice.Location = New System.Drawing.Point(1160, 576)
+        Me.txt_TotalPrice.Location = New System.Drawing.Point(894, 670)
         Me.txt_TotalPrice.Name = "txt_TotalPrice"
         Me.txt_TotalPrice.Size = New System.Drawing.Size(120, 20)
         Me.txt_TotalPrice.TabIndex = 116
@@ -503,7 +509,7 @@ Partial Class btnAdd
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(1363, 537)
+        Me.Label4.Location = New System.Drawing.Point(1102, 632)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 16)
         Me.Label4.TabIndex = 117
@@ -512,7 +518,7 @@ Partial Class btnAdd
         'txt_Address
         '
         Me.txt_Address.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Address", True))
-        Me.txt_Address.Location = New System.Drawing.Point(1418, 533)
+        Me.txt_Address.Location = New System.Drawing.Point(1157, 628)
         Me.txt_Address.Name = "txt_Address"
         Me.txt_Address.Size = New System.Drawing.Size(200, 20)
         Me.txt_Address.TabIndex = 118
@@ -520,7 +526,7 @@ Partial Class btnAdd
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(1312, 578)
+        Me.Label5.Location = New System.Drawing.Point(1051, 673)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(100, 16)
         Me.Label5.TabIndex = 119
@@ -529,7 +535,7 @@ Partial Class btnAdd
         'txt_ContactNumber
         '
         Me.txt_ContactNumber.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Contact_Number", True))
-        Me.txt_ContactNumber.Location = New System.Drawing.Point(1418, 574)
+        Me.txt_ContactNumber.Location = New System.Drawing.Point(1157, 669)
         Me.txt_ContactNumber.Name = "txt_ContactNumber"
         Me.txt_ContactNumber.Size = New System.Drawing.Size(200, 20)
         Me.txt_ContactNumber.TabIndex = 120
@@ -537,7 +543,7 @@ Partial Class btnAdd
         'DateTimePicker2
         '
         Me.DateTimePicker2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Date_Delivered", True))
-        Me.DateTimePicker2.Location = New System.Drawing.Point(610, 612)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(344, 706)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker2.TabIndex = 122
@@ -545,7 +551,7 @@ Partial Class btnAdd
         'lbl_DateDelivered
         '
         Me.lbl_DateDelivered.AutoSize = True
-        Me.lbl_DateDelivered.Location = New System.Drawing.Point(514, 616)
+        Me.lbl_DateDelivered.Location = New System.Drawing.Point(248, 710)
         Me.lbl_DateDelivered.Name = "lbl_DateDelivered"
         Me.lbl_DateDelivered.Size = New System.Drawing.Size(90, 16)
         Me.lbl_DateDelivered.TabIndex = 121
@@ -556,7 +562,7 @@ Partial Class btnAdd
         Me.btnAddOrder1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnAddOrder1.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnAddOrder1.ForeColor = System.Drawing.Color.White
-        Me.btnAddOrder1.Location = New System.Drawing.Point(1676, 31)
+        Me.btnAddOrder1.Location = New System.Drawing.Point(1640, 106)
         Me.btnAddOrder1.Name = "btnAddOrder1"
         Me.btnAddOrder1.Size = New System.Drawing.Size(90, 34)
         Me.btnAddOrder1.TabIndex = 123
@@ -568,7 +574,7 @@ Partial Class btnAdd
         Me.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnSave.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(1676, 538)
+        Me.btnSave.Location = New System.Drawing.Point(1640, 625)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(90, 34)
         Me.btnSave.TabIndex = 124
@@ -580,7 +586,7 @@ Partial Class btnAdd
         Me.cmb_Status.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Status", True))
         Me.cmb_Status.FormattingEnabled = True
         Me.cmb_Status.Items.AddRange(New Object() {"CANCELLED", "PENDING", "PAID", "ACCEPTED"})
-        Me.cmb_Status.Location = New System.Drawing.Point(1418, 613)
+        Me.cmb_Status.Location = New System.Drawing.Point(1157, 708)
         Me.cmb_Status.Name = "cmb_Status"
         Me.cmb_Status.Size = New System.Drawing.Size(121, 23)
         Me.cmb_Status.TabIndex = 125
@@ -588,7 +594,7 @@ Partial Class btnAdd
         'lblStatus
         '
         Me.lblStatus.AutoSize = True
-        Me.lblStatus.Location = New System.Drawing.Point(1371, 617)
+        Me.lblStatus.Location = New System.Drawing.Point(1110, 712)
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(41, 16)
         Me.lblStatus.TabIndex = 126
@@ -599,12 +605,30 @@ Partial Class btnAdd
         Me.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnDelete.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnDelete.ForeColor = System.Drawing.Color.White
-        Me.btnDelete.Location = New System.Drawing.Point(1676, 598)
+        Me.btnDelete.Location = New System.Drawing.Point(1640, 681)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(90, 34)
         Me.btnDelete.TabIndex = 127
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'lblNotes
+        '
+        Me.lblNotes.AutoSize = True
+        Me.lblNotes.Location = New System.Drawing.Point(299, 794)
+        Me.lblNotes.Name = "lblNotes"
+        Me.lblNotes.Size = New System.Drawing.Size(34, 16)
+        Me.lblNotes.TabIndex = 128
+        Me.lblNotes.Text = "Note"
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSys_OrdersV2DBBindingSource, "Notes", True))
+        Me.RichTextBox1.Location = New System.Drawing.Point(344, 776)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(684, 134)
+        Me.RichTextBox1.TabIndex = 129
+        Me.RichTextBox1.Text = ""
         '
         'btnAdd
         '
@@ -612,7 +636,9 @@ Partial Class btnAdd
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1909, 647)
+        Me.ClientSize = New System.Drawing.Size(1775, 958)
+        Me.Controls.Add(Me.RichTextBox1)
+        Me.Controls.Add(Me.lblNotes)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.lblStatus)
         Me.Controls.Add(Me.cmb_Status)
@@ -717,4 +743,6 @@ Partial Class btnAdd
     Friend WithEvents cmb_Status As ComboBox
     Friend WithEvents lblStatus As Label
     Friend WithEvents btnDelete As Button
+    Friend WithEvents lblNotes As Label
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class

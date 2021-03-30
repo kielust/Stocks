@@ -12,7 +12,9 @@
     End Sub
 
     Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
+        date_added.Checked = False
         OMSysStocksDBBindingSource.AddNew()
+        cmb_Size.SelectedIndex = -1
     End Sub
     Private Sub btnDeleteOrder_Click_1(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click
         Dim choice As DialogResult = MessageBox.Show("Are you sure you want to delete this product?", "Delete", MessageBoxButtons.YesNo)
@@ -20,12 +22,20 @@
 
             Try
                 OMSysStocksDBBindingSource.RemoveCurrent()
+                OMSysStocksDBBindingSource.EndEdit()
                 OMSys_StocksDBTableAdapter.Update(OMSysOrdersDBDataSet)
             Catch ex As Exception
 
             End Try
 
         End If
+
+
+
+
+
+        OMSysStocksDBBindingSource.MoveLast()
+
     End Sub
 
     Private Sub btnUpdateOrder_Click_1(sender As Object, e As EventArgs) Handles btnUpdateOrder.Click
@@ -35,12 +45,14 @@
             MessageBox.Show("Please fill the required field/s.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             Try
-                OMSys_StocksDBTableAdapter.Update(OMSysOrdersDBDataSet)
                 OMSysStocksDBBindingSource.EndEdit()
                 OMSys_StocksDBTableAdapter.Update(OMSysOrdersDBDataSet)
                 MessageBox.Show("Product saved.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
-                MessageBox.Show(ex.ToString)
+                'MessageBox.Show("Database error, the application will restart to save the changes.", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                'Application.Restart()
+                ' Puwede yung code above pero pwede rin to, ikaw mamili kung ano mas maganda pag nag e-error
+                Me.Refresh()
             End Try
         End If
 

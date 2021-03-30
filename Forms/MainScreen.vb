@@ -34,6 +34,9 @@
             End Try
 
         End If
+
+
+        OMSys_OrdersV2DBBindingSource.MoveLast()
     End Sub
 
     Private Sub btnUpdateOrder_Click_1(sender As Object, e As EventArgs)
@@ -48,6 +51,7 @@
     End Sub
     Private Sub displayAll()
         txtSearch.Text = ""
+
 
         Me.OMSys_OrdersV2DBTableAdapter.Fill(Me.OMSysOrdersDBDataSet.OMSys_OrdersV2DB)
         Me.OMSys_OrdersV2DBBindingSource.RemoveFilter()
@@ -73,13 +77,15 @@
             MessageBox.Show("Please fill the required field/s.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             Try
-                OMSys_OrdersV2DBTableAdapter.Update(OMSysOrdersDBDataSet)
                 OMSys_OrdersV2DBBindingSource.EndEdit()
                 OMSys_OrdersV2DBTableAdapter.Update(OMSysOrdersDBDataSet)
                 MessageBox.Show("Order saved.", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 dgv_styleRow()
             Catch ex As Exception
-                MessageBox.Show(ex.ToString)
+                ' MessageBox.Show("Database error, the application will restart to save the changes.", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                'Application.Restart()
+                ' Puwede yung code above pero pwede rin to, ikaw mamili kung ano mas maganda pag nag e-error
+                Me.Refresh()
             End Try
         End If
     End Sub
@@ -90,6 +96,7 @@
 
             Try
                 OMSys_OrdersV2DBBindingSource.RemoveCurrent()
+                OMSys_OrdersV2DBBindingSource.EndEdit()
                 OMSys_OrdersV2DBTableAdapter.Update(OMSysOrdersDBDataSet)
                 dgv_styleRow()
             Catch ex As Exception
@@ -98,4 +105,6 @@
 
         End If
     End Sub
+
+
 End Class

@@ -24,9 +24,9 @@ Partial Class frmMainScreen2
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim Selling_PriceLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnAddOrder = New System.Windows.Forms.Button()
         Me.btnDeleteOrder = New System.Windows.Forms.Button()
         Me.btnUpdateOrder = New System.Windows.Forms.Button()
@@ -34,8 +34,16 @@ Partial Class frmMainScreen2
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Date_Addedd = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MaterialNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Size = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Color = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SellingPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UnitPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OMSysStocksDBBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.OMSysOrdersDBDataSet = New OMSys.OMSysOrdersDBDataSet()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnViewAll = New System.Windows.Forms.Button()
         Me.btnSearch = New System.Windows.Forms.Button()
@@ -56,14 +64,6 @@ Partial Class frmMainScreen2
         Me.txt_SellingPrice = New System.Windows.Forms.TextBox()
         Me.lbl_UnitPrice = New System.Windows.Forms.Label()
         Me.txt_OriginalPrice = New System.Windows.Forms.TextBox()
-        Me.OMSysStocksDBBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.OMSysOrdersDBDataSet = New OMSys.OMSysOrdersDBDataSet()
-        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateAddedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MaterialNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SellingPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UnitPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OMSys_OrdersDBBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.OMSys_OrdersDBTableAdapter = New OMSys.OMSysOrdersDBDataSetTableAdapters.OMSys_OrdersDBTableAdapter()
         Me.TableAdapterManager = New OMSys.OMSysOrdersDBDataSetTableAdapters.TableAdapterManager()
@@ -160,22 +160,25 @@ Partial Class frmMainScreen2
         '
         'DataGridView1
         '
-        Me.DataGridView1.AllowUserToOrderColumns = True
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeColumns = False
+        Me.DataGridView1.AllowUserToResizeRows = False
         Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer))
-        DataGridViewCellStyle25.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 29
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.DateAddedDataGridViewTextBoxColumn, Me.MaterialNameDataGridViewTextBoxColumn, Me.StockDataGridViewTextBoxColumn, Me.Size, Me.Color, Me.SellingPriceDataGridViewTextBoxColumn, Me.UnitPriceDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.Date_Addedd, Me.MaterialNameDataGridViewTextBoxColumn, Me.StockDataGridViewTextBoxColumn, Me.Size, Me.Color, Me.SellingPriceDataGridViewTextBoxColumn, Me.UnitPriceDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.OMSysStocksDBBindingSource
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.Location = New System.Drawing.Point(63, 86)
@@ -188,6 +191,41 @@ Partial Class frmMainScreen2
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(1091, 429)
         Me.DataGridView1.TabIndex = 85
+        '
+        'IDDataGridViewTextBoxColumn
+        '
+        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IDDataGridViewTextBoxColumn.Width = 125
+        '
+        'Date_Addedd
+        '
+        Me.Date_Addedd.DataPropertyName = "Date_Addedd"
+        Me.Date_Addedd.HeaderText = "Date Added"
+        Me.Date_Addedd.Name = "Date_Addedd"
+        Me.Date_Addedd.ReadOnly = True
+        Me.Date_Addedd.Width = 200
+        '
+        'MaterialNameDataGridViewTextBoxColumn
+        '
+        Me.MaterialNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.MaterialNameDataGridViewTextBoxColumn.DataPropertyName = "Material_Name"
+        Me.MaterialNameDataGridViewTextBoxColumn.HeaderText = "Stock Name"
+        Me.MaterialNameDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.MaterialNameDataGridViewTextBoxColumn.Name = "MaterialNameDataGridViewTextBoxColumn"
+        Me.MaterialNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'StockDataGridViewTextBoxColumn
+        '
+        Me.StockDataGridViewTextBoxColumn.DataPropertyName = "Stock"
+        Me.StockDataGridViewTextBoxColumn.HeaderText = "Stock"
+        Me.StockDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.StockDataGridViewTextBoxColumn.Name = "StockDataGridViewTextBoxColumn"
+        Me.StockDataGridViewTextBoxColumn.ReadOnly = True
+        Me.StockDataGridViewTextBoxColumn.Width = 125
         '
         'Size
         '
@@ -202,6 +240,41 @@ Partial Class frmMainScreen2
         Me.Color.HeaderText = "Color"
         Me.Color.Name = "Color"
         Me.Color.ReadOnly = True
+        '
+        'SellingPriceDataGridViewTextBoxColumn
+        '
+        Me.SellingPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.SellingPriceDataGridViewTextBoxColumn.DataPropertyName = "Selling_Price"
+        DataGridViewCellStyle2.Format = "C2"
+        Me.SellingPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
+        Me.SellingPriceDataGridViewTextBoxColumn.HeaderText = "Selling Price"
+        Me.SellingPriceDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.SellingPriceDataGridViewTextBoxColumn.Name = "SellingPriceDataGridViewTextBoxColumn"
+        Me.SellingPriceDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SellingPriceDataGridViewTextBoxColumn.Width = 93
+        '
+        'UnitPriceDataGridViewTextBoxColumn
+        '
+        Me.UnitPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.UnitPriceDataGridViewTextBoxColumn.DataPropertyName = "Unit_Price"
+        DataGridViewCellStyle3.Format = "C2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.UnitPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
+        Me.UnitPriceDataGridViewTextBoxColumn.HeaderText = "Unit Price"
+        Me.UnitPriceDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.UnitPriceDataGridViewTextBoxColumn.Name = "UnitPriceDataGridViewTextBoxColumn"
+        Me.UnitPriceDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UnitPriceDataGridViewTextBoxColumn.Width = 81
+        '
+        'OMSysStocksDBBindingSource
+        '
+        Me.OMSysStocksDBBindingSource.DataMember = "OMSys_StocksDB"
+        Me.OMSysStocksDBBindingSource.DataSource = Me.OMSysOrdersDBDataSet
+        '
+        'OMSysOrdersDBDataSet
+        '
+        Me.OMSysOrdersDBDataSet.DataSetName = "OMSysOrdersDBDataSet"
+        Me.OMSysOrdersDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label11
         '
@@ -284,8 +357,9 @@ Partial Class frmMainScreen2
         '
         'date_added
         '
+        Me.date_added.Checked = False
         Me.date_added.CustomFormat = ""
-        Me.date_added.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.OMSysStocksDBBindingSource, "Date_Added", True))
+        Me.date_added.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.OMSysStocksDBBindingSource, "Date_Addedd", True))
         Me.date_added.Location = New System.Drawing.Point(1267, 91)
         Me.date_added.Name = "date_added"
         Me.date_added.ShowCheckBox = True
@@ -331,6 +405,7 @@ Partial Class frmMainScreen2
         'cmb_Size
         '
         Me.cmb_Size.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OMSysStocksDBBindingSource, "Size", True))
+        Me.cmb_Size.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_Size.FormattingEnabled = True
         Me.cmb_Size.Items.AddRange(New Object() {"XXS", "XS", "S", "M", "L", "XL", "XXL"})
         Me.cmb_Size.Location = New System.Drawing.Point(1267, 207)
@@ -388,77 +463,6 @@ Partial Class frmMainScreen2
         Me.txt_OriginalPrice.Name = "txt_OriginalPrice"
         Me.txt_OriginalPrice.Size = New System.Drawing.Size(100, 20)
         Me.txt_OriginalPrice.TabIndex = 120
-        '
-        'OMSysStocksDBBindingSource
-        '
-        Me.OMSysStocksDBBindingSource.DataMember = "OMSys_StocksDB"
-        Me.OMSysStocksDBBindingSource.DataSource = Me.OMSysOrdersDBDataSet
-        '
-        'OMSysOrdersDBDataSet
-        '
-        Me.OMSysOrdersDBDataSet.DataSetName = "OMSysOrdersDBDataSet"
-        Me.OMSysOrdersDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'IDDataGridViewTextBoxColumn
-        '
-        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.IDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
-        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IDDataGridViewTextBoxColumn.Width = 125
-        '
-        'DateAddedDataGridViewTextBoxColumn
-        '
-        Me.DateAddedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DateAddedDataGridViewTextBoxColumn.DataPropertyName = "Date_Added"
-        Me.DateAddedDataGridViewTextBoxColumn.HeaderText = "Date Added"
-        Me.DateAddedDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.DateAddedDataGridViewTextBoxColumn.Name = "DateAddedDataGridViewTextBoxColumn"
-        Me.DateAddedDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'MaterialNameDataGridViewTextBoxColumn
-        '
-        Me.MaterialNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.MaterialNameDataGridViewTextBoxColumn.DataPropertyName = "Material_Name"
-        Me.MaterialNameDataGridViewTextBoxColumn.HeaderText = "Stock Name"
-        Me.MaterialNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.MaterialNameDataGridViewTextBoxColumn.Name = "MaterialNameDataGridViewTextBoxColumn"
-        Me.MaterialNameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'StockDataGridViewTextBoxColumn
-        '
-        Me.StockDataGridViewTextBoxColumn.DataPropertyName = "Stock"
-        Me.StockDataGridViewTextBoxColumn.HeaderText = "Stock"
-        Me.StockDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.StockDataGridViewTextBoxColumn.Name = "StockDataGridViewTextBoxColumn"
-        Me.StockDataGridViewTextBoxColumn.ReadOnly = True
-        Me.StockDataGridViewTextBoxColumn.Width = 125
-        '
-        'SellingPriceDataGridViewTextBoxColumn
-        '
-        Me.SellingPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.SellingPriceDataGridViewTextBoxColumn.DataPropertyName = "Selling_Price"
-        DataGridViewCellStyle26.Format = "C2"
-        Me.SellingPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle26
-        Me.SellingPriceDataGridViewTextBoxColumn.HeaderText = "Selling Price"
-        Me.SellingPriceDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.SellingPriceDataGridViewTextBoxColumn.Name = "SellingPriceDataGridViewTextBoxColumn"
-        Me.SellingPriceDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SellingPriceDataGridViewTextBoxColumn.Width = 93
-        '
-        'UnitPriceDataGridViewTextBoxColumn
-        '
-        Me.UnitPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.UnitPriceDataGridViewTextBoxColumn.DataPropertyName = "Unit_Price"
-        DataGridViewCellStyle27.Format = "C2"
-        DataGridViewCellStyle27.NullValue = Nothing
-        Me.UnitPriceDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle27
-        Me.UnitPriceDataGridViewTextBoxColumn.HeaderText = "Unit Price"
-        Me.UnitPriceDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.UnitPriceDataGridViewTextBoxColumn.Name = "UnitPriceDataGridViewTextBoxColumn"
-        Me.UnitPriceDataGridViewTextBoxColumn.ReadOnly = True
-        Me.UnitPriceDataGridViewTextBoxColumn.Width = 81
         '
         'OMSys_OrdersDBBindingSource
         '
@@ -546,14 +550,6 @@ Partial Class frmMainScreen2
     Friend WithEvents btnViewAll As Button
     Friend WithEvents btnSearch As Button
     Friend WithEvents txtSearch As TextBox
-    Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DateAddedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents MaterialNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents StockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Size As DataGridViewTextBoxColumn
-    Friend WithEvents Color As DataGridViewTextBoxColumn
-    Friend WithEvents SellingPriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents UnitPriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents lblID As Label
     Friend WithEvents txt_ID As TextBox
     Friend WithEvents lbl_DateAdded As Label
@@ -570,4 +566,12 @@ Partial Class frmMainScreen2
     Friend WithEvents txt_SellingPrice As TextBox
     Friend WithEvents lbl_UnitPrice As Label
     Friend WithEvents txt_OriginalPrice As TextBox
+    Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Date_Addedd As DataGridViewTextBoxColumn
+    Friend WithEvents MaterialNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents StockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Size As DataGridViewTextBoxColumn
+    Friend WithEvents Color As DataGridViewTextBoxColumn
+    Friend WithEvents SellingPriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents UnitPriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
