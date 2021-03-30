@@ -1,6 +1,6 @@
 ﻿Public Class frmMain
     Private Sub btnManageOrder_Click(sender As Object, e As EventArgs) Handles btnManageOrder.Click
-        Dim ManageOrder As New frmMainScreen
+        Dim ManageOrder As New btnAdd
         ManageOrder.Show()
     End Sub
 
@@ -10,7 +10,7 @@
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        Dim frmManageOrder As New frmMainScreen
+        Dim frmManageOrder As New btnAdd
         Dim frmManageStocks As New frmMainScreen2
         Dim LoginForm As New frmLogin
 

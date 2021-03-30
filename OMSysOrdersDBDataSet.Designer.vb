@@ -738,6 +738,10 @@ Partial Public Class OMSysOrdersDBDataSet
         
         Private columnUnit_Price As Global.System.Data.DataColumn
         
+        Private columnSize As Global.System.Data.DataColumn
+        
+        Private columnColor As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -822,6 +826,22 @@ Partial Public Class OMSysOrdersDBDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property SizeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSize
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property ColorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnColor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -858,9 +878,9 @@ Partial Public Class OMSysOrdersDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddOMSys_StocksDBRow(ByVal Date_Added As Date, ByVal Material_Name As String, ByVal Stock As Integer, ByVal Selling_Price As Decimal, ByVal Unit_Price As Decimal) As OMSys_StocksDBRow
+        Public Overloads Function AddOMSys_StocksDBRow(ByVal Date_Added As Date, ByVal Material_Name As String, ByVal Stock As Integer, ByVal Selling_Price As Decimal, ByVal Unit_Price As Decimal, ByVal Size As String, ByVal Color As String) As OMSys_StocksDBRow
             Dim rowOMSys_StocksDBRow As OMSys_StocksDBRow = CType(Me.NewRow,OMSys_StocksDBRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Date_Added, Material_Name, Stock, Selling_Price, Unit_Price}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Date_Added, Material_Name, Stock, Selling_Price, Unit_Price, Size, Color}
             rowOMSys_StocksDBRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowOMSys_StocksDBRow)
             Return rowOMSys_StocksDBRow
@@ -895,6 +915,8 @@ Partial Public Class OMSysOrdersDBDataSet
             Me.columnStock = MyBase.Columns("Stock")
             Me.columnSelling_Price = MyBase.Columns("Selling_Price")
             Me.columnUnit_Price = MyBase.Columns("Unit_Price")
+            Me.columnSize = MyBase.Columns("Size")
+            Me.columnColor = MyBase.Columns("Color")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -912,13 +934,18 @@ Partial Public Class OMSysOrdersDBDataSet
             MyBase.Columns.Add(Me.columnSelling_Price)
             Me.columnUnit_Price = New Global.System.Data.DataColumn("Unit_Price", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnUnit_Price)
+            Me.columnSize = New Global.System.Data.DataColumn("Size", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSize)
+            Me.columnColor = New Global.System.Data.DataColumn("Color", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnColor)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
             Me.columnID.AutoIncrement = true
             Me.columnID.AutoIncrementSeed = 1
             Me.columnID.AllowDBNull = false
             Me.columnID.Unique = true
-            Me.columnDate_Added.DateTimeMode = Global.System.Data.DataSetDateTime.Local
             Me.columnMaterial_Name.MaxLength = 255
+            Me.columnSize.MaxLength = 255
+            Me.columnColor.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1058,8 +1085,6 @@ Partial Public Class OMSysOrdersDBDataSet
         
         Private columnID As Global.System.Data.DataColumn
         
-        Private columnCustomer_Name As Global.System.Data.DataColumn
-        
         Private columnProduct_Name As Global.System.Data.DataColumn
         
         Private columnQuantity As Global.System.Data.DataColumn
@@ -1073,6 +1098,16 @@ Partial Public Class OMSysOrdersDBDataSet
         Private columnNotes As Global.System.Data.DataColumn
         
         Private columnStatus As Global.System.Data.DataColumn
+        
+        Private columnCustomer_FirstName As Global.System.Data.DataColumn
+        
+        Private columnCustomer_MiddleName As Global.System.Data.DataColumn
+        
+        Private columnCustomer_LastName As Global.System.Data.DataColumn
+        
+        Private columnDate_Added As Global.System.Data.DataColumn
+        
+        Private columnDate_Delivered As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -1114,14 +1149,6 @@ Partial Public Class OMSysOrdersDBDataSet
         Public ReadOnly Property IDColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Customer_NameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCustomer_Name
             End Get
         End Property
         
@@ -1182,6 +1209,46 @@ Partial Public Class OMSysOrdersDBDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Customer_FirstNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCustomer_FirstName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Customer_MiddleNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCustomer_MiddleName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Customer_LastNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCustomer_LastName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Date_AddedColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDate_Added
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Date_DeliveredColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDate_Delivered
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1218,9 +1285,9 @@ Partial Public Class OMSysOrdersDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddOMSys_OrdersV2DBRow(ByVal Customer_Name As String, ByVal Product_Name As String, ByVal Quantity As Integer, ByVal Total_Price As Decimal, ByVal Address As String, ByVal Contact_Number As String, ByVal Notes As String, ByVal Status As String) As OMSys_OrdersV2DBRow
+        Public Overloads Function AddOMSys_OrdersV2DBRow(ByVal Product_Name As String, ByVal Quantity As Integer, ByVal Total_Price As Decimal, ByVal Address As String, ByVal Contact_Number As String, ByVal Notes As String, ByVal Status As String, ByVal Customer_FirstName As String, ByVal Customer_MiddleName As String, ByVal Customer_LastName As String, ByVal Date_Added As String, ByVal Date_Delivered As String) As OMSys_OrdersV2DBRow
             Dim rowOMSys_OrdersV2DBRow As OMSys_OrdersV2DBRow = CType(Me.NewRow,OMSys_OrdersV2DBRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Customer_Name, Product_Name, Quantity, Total_Price, Address, Contact_Number, Notes, Status}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Product_Name, Quantity, Total_Price, Address, Contact_Number, Notes, Status, Customer_FirstName, Customer_MiddleName, Customer_LastName, Date_Added, Date_Delivered}
             rowOMSys_OrdersV2DBRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowOMSys_OrdersV2DBRow)
             Return rowOMSys_OrdersV2DBRow
@@ -1250,7 +1317,6 @@ Partial Public Class OMSysOrdersDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnID = MyBase.Columns("ID")
-            Me.columnCustomer_Name = MyBase.Columns("Customer_Name")
             Me.columnProduct_Name = MyBase.Columns("Product_Name")
             Me.columnQuantity = MyBase.Columns("Quantity")
             Me.columnTotal_Price = MyBase.Columns("Total_Price")
@@ -1258,6 +1324,11 @@ Partial Public Class OMSysOrdersDBDataSet
             Me.columnContact_Number = MyBase.Columns("Contact_Number")
             Me.columnNotes = MyBase.Columns("Notes")
             Me.columnStatus = MyBase.Columns("Status")
+            Me.columnCustomer_FirstName = MyBase.Columns("Customer_FirstName")
+            Me.columnCustomer_MiddleName = MyBase.Columns("Customer_MiddleName")
+            Me.columnCustomer_LastName = MyBase.Columns("Customer_LastName")
+            Me.columnDate_Added = MyBase.Columns("Date_Added")
+            Me.columnDate_Delivered = MyBase.Columns("Date_Delivered")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1265,8 +1336,6 @@ Partial Public Class OMSysOrdersDBDataSet
         Private Sub InitClass()
             Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnID)
-            Me.columnCustomer_Name = New Global.System.Data.DataColumn("Customer_Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCustomer_Name)
             Me.columnProduct_Name = New Global.System.Data.DataColumn("Product_Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnProduct_Name)
             Me.columnQuantity = New Global.System.Data.DataColumn("Quantity", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
@@ -1281,17 +1350,31 @@ Partial Public Class OMSysOrdersDBDataSet
             MyBase.Columns.Add(Me.columnNotes)
             Me.columnStatus = New Global.System.Data.DataColumn("Status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnStatus)
+            Me.columnCustomer_FirstName = New Global.System.Data.DataColumn("Customer_FirstName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCustomer_FirstName)
+            Me.columnCustomer_MiddleName = New Global.System.Data.DataColumn("Customer_MiddleName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCustomer_MiddleName)
+            Me.columnCustomer_LastName = New Global.System.Data.DataColumn("Customer_LastName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCustomer_LastName)
+            Me.columnDate_Added = New Global.System.Data.DataColumn("Date_Added", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDate_Added)
+            Me.columnDate_Delivered = New Global.System.Data.DataColumn("Date_Delivered", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDate_Delivered)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
             Me.columnID.AutoIncrement = true
             Me.columnID.AutoIncrementSeed = 1
             Me.columnID.AllowDBNull = false
             Me.columnID.Unique = true
-            Me.columnCustomer_Name.MaxLength = 255
             Me.columnProduct_Name.MaxLength = 255
             Me.columnAddress.MaxLength = 255
             Me.columnContact_Number.MaxLength = 255
             Me.columnNotes.MaxLength = 536870910
             Me.columnStatus.MaxLength = 255
+            Me.columnCustomer_FirstName.MaxLength = 255
+            Me.columnCustomer_MiddleName.MaxLength = 255
+            Me.columnCustomer_LastName.MaxLength = 255
+            Me.columnDate_Added.MaxLength = 255
+            Me.columnDate_Delivered.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1767,6 +1850,36 @@ Partial Public Class OMSysOrdersDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Size() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableOMSys_StocksDB.SizeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Size' in table 'OMSys_StocksDB' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableOMSys_StocksDB.SizeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Color() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableOMSys_StocksDB.ColorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Color' in table 'OMSys_StocksDB' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableOMSys_StocksDB.ColorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsDate_AddedNull() As Boolean
             Return Me.IsNull(Me.tableOMSys_StocksDB.Date_AddedColumn)
         End Function
@@ -1824,6 +1937,30 @@ Partial Public Class OMSysOrdersDBDataSet
         Public Sub SetUnit_PriceNull()
             Me(Me.tableOMSys_StocksDB.Unit_PriceColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsSizeNull() As Boolean
+            Return Me.IsNull(Me.tableOMSys_StocksDB.SizeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetSizeNull()
+            Me(Me.tableOMSys_StocksDB.SizeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsColorNull() As Boolean
+            Return Me.IsNull(Me.tableOMSys_StocksDB.ColorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetColorNull()
+            Me(Me.tableOMSys_StocksDB.ColorColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -1849,21 +1986,6 @@ Partial Public Class OMSysOrdersDBDataSet
             End Get
             Set
                 Me(Me.tableOMSys_OrdersV2DB.IDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property Customer_Name() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableOMSys_OrdersV2DB.Customer_NameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Customer_Name' in table 'OMSys_OrdersV2DB' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableOMSys_OrdersV2DB.Customer_NameColumn) = value
             End Set
         End Property
         
@@ -1974,15 +2096,79 @@ Partial Public Class OMSysOrdersDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsCustomer_NameNull() As Boolean
-            Return Me.IsNull(Me.tableOMSys_OrdersV2DB.Customer_NameColumn)
-        End Function
+        Public Property Customer_FirstName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableOMSys_OrdersV2DB.Customer_FirstNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Customer_FirstName' in table 'OMSys_OrdersV2DB' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableOMSys_OrdersV2DB.Customer_FirstNameColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetCustomer_NameNull()
-            Me(Me.tableOMSys_OrdersV2DB.Customer_NameColumn) = Global.System.Convert.DBNull
-        End Sub
+        Public Property Customer_MiddleName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableOMSys_OrdersV2DB.Customer_MiddleNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Customer_MiddleName' in table 'OMSys_OrdersV2DB' is DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableOMSys_OrdersV2DB.Customer_MiddleNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Customer_LastName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableOMSys_OrdersV2DB.Customer_LastNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Customer_LastName' in table 'OMSys_OrdersV2DB' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableOMSys_OrdersV2DB.Customer_LastNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Date_Added() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableOMSys_OrdersV2DB.Date_AddedColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Date_Added' in table 'OMSys_OrdersV2DB' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableOMSys_OrdersV2DB.Date_AddedColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Date_Delivered() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableOMSys_OrdersV2DB.Date_DeliveredColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Date_Delivered' in table 'OMSys_OrdersV2DB' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableOMSys_OrdersV2DB.Date_DeliveredColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -2066,6 +2252,66 @@ Partial Public Class OMSysOrdersDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetStatusNull()
             Me(Me.tableOMSys_OrdersV2DB.StatusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsCustomer_FirstNameNull() As Boolean
+            Return Me.IsNull(Me.tableOMSys_OrdersV2DB.Customer_FirstNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetCustomer_FirstNameNull()
+            Me(Me.tableOMSys_OrdersV2DB.Customer_FirstNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsCustomer_MiddleNameNull() As Boolean
+            Return Me.IsNull(Me.tableOMSys_OrdersV2DB.Customer_MiddleNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetCustomer_MiddleNameNull()
+            Me(Me.tableOMSys_OrdersV2DB.Customer_MiddleNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsCustomer_LastNameNull() As Boolean
+            Return Me.IsNull(Me.tableOMSys_OrdersV2DB.Customer_LastNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetCustomer_LastNameNull()
+            Me(Me.tableOMSys_OrdersV2DB.Customer_LastNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsDate_AddedNull() As Boolean
+            Return Me.IsNull(Me.tableOMSys_OrdersV2DB.Date_AddedColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetDate_AddedNull()
+            Me(Me.tableOMSys_OrdersV2DB.Date_AddedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsDate_DeliveredNull() As Boolean
+            Return Me.IsNull(Me.tableOMSys_OrdersV2DB.Date_DeliveredColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetDate_DeliveredNull()
+            Me(Me.tableOMSys_OrdersV2DB.Date_DeliveredColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -2852,6 +3098,8 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Stock", "Stock")
             tableMapping.ColumnMappings.Add("Selling_Price", "Selling_Price")
             tableMapping.ColumnMappings.Add("Unit_Price", "Unit_Price")
+            tableMapping.ColumnMappings.Add("Size", "Size")
+            tableMapping.ColumnMappings.Add("Color", "Color")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -2859,7 +3107,8 @@ Namespace OMSysOrdersDBDataSetTableAdapters
                 "LL) OR (`Date_Added` = ?)) AND ((? = 1 AND `Material_Name` IS NULL) OR (`Materia"& _ 
                 "l_Name` = ?)) AND ((? = 1 AND `Stock` IS NULL) OR (`Stock` = ?)) AND ((? = 1 AND"& _ 
                 " `Selling_Price` IS NULL) OR (`Selling_Price` = ?)) AND ((? = 1 AND `Unit_Price`"& _ 
-                " IS NULL) OR (`Unit_Price` = ?)))"
+                " IS NULL) OR (`Unit_Price` = ?)) AND ((? = 1 AND `Color` IS NULL) OR (`Color` = "& _ 
+                "?)) AND ((? = 1 AND `Size` IS NULL) OR (`Size` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Date_Added", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Added", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -2872,30 +3121,40 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Selling_Price", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Selling_Price", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Unit_Price", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Unit_Price", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Unit_Price", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Unit_Price", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Color", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Color", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Color", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Color", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Size", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Size", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Size", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Size", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `OMSys_StocksDB` (`Date_Added`, `Material_Name`, `Stock`, `Selling_Pr"& _ 
-                "ice`, `Unit_Price`) VALUES (?, ?, ?, ?, ?)"
+                "ice`, `Unit_Price`, `Color`, `Size`) VALUES (?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Date_Added", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Added", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Material_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Material_Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Stock", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Stock", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Selling_Price", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Selling_Price", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Unit_Price", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Unit_Price", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Color", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Color", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Size", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Size", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `OMSys_StocksDB` SET `Date_Added` = ?, `Material_Name` = ?, `Stock` = ?, `"& _ 
-                "Selling_Price` = ?, `Unit_Price` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Date_Add"& _ 
-                "ed` IS NULL) OR (`Date_Added` = ?)) AND ((? = 1 AND `Material_Name` IS NULL) OR "& _ 
-                "(`Material_Name` = ?)) AND ((? = 1 AND `Stock` IS NULL) OR (`Stock` = ?)) AND (("& _ 
-                "? = 1 AND `Selling_Price` IS NULL) OR (`Selling_Price` = ?)) AND ((? = 1 AND `Un"& _ 
-                "it_Price` IS NULL) OR (`Unit_Price` = ?)))"
+                "Selling_Price` = ?, `Unit_Price` = ?, `Color` = ?, `Size` = ? WHERE ((`ID` = ?) "& _ 
+                "AND ((? = 1 AND `Date_Added` IS NULL) OR (`Date_Added` = ?)) AND ((? = 1 AND `Ma"& _ 
+                "terial_Name` IS NULL) OR (`Material_Name` = ?)) AND ((? = 1 AND `Stock` IS NULL)"& _ 
+                " OR (`Stock` = ?)) AND ((? = 1 AND `Selling_Price` IS NULL) OR (`Selling_Price` "& _ 
+                "= ?)) AND ((? = 1 AND `Unit_Price` IS NULL) OR (`Unit_Price` = ?)) AND ((? = 1 A"& _ 
+                "ND `Color` IS NULL) OR (`Color` = ?)) AND ((? = 1 AND `Size` IS NULL) OR (`Size`"& _ 
+                " = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Date_Added", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Added", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Material_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Material_Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Stock", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Stock", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Selling_Price", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Selling_Price", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Unit_Price", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Unit_Price", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Color", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Color", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Size", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Size", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Date_Added", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Added", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Date_Added", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Added", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -2907,6 +3166,10 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Selling_Price", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Selling_Price", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Unit_Price", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Unit_Price", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Unit_Price", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Unit_Price", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Color", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Color", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Color", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Color", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Size", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Size", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Size", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Size", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2922,8 +3185,8 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, Date_Added, Material_Name, Stock, Selling_Price, Unit_Price FROM OMSys"& _ 
-                "_StocksDB"
+            Me._commandCollection(0).CommandText = "SELECT ID, Date_Added, Material_Name, Stock, Selling_Price, Unit_Price, Color, [S"& _ 
+                "ize] FROM OMSys_StocksDB"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2983,7 +3246,7 @@ Namespace OMSysOrdersDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Date_Added As Global.System.Nullable(Of Date), ByVal Original_Material_Name As String, ByVal Original_Stock As Global.System.Nullable(Of Integer), ByVal Original_Selling_Price As Global.System.Nullable(Of Decimal), ByVal Original_Unit_Price As Global.System.Nullable(Of Decimal)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Date_Added As Global.System.Nullable(Of Date), ByVal Original_Material_Name As String, ByVal Original_Stock As Global.System.Nullable(Of Integer), ByVal Original_Selling_Price As Global.System.Nullable(Of Decimal), ByVal Original_Unit_Price As Global.System.Nullable(Of Decimal), ByVal Original_Color As String, ByVal Original_Size As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
             If (Original_Date_Added.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -3020,6 +3283,20 @@ Namespace OMSysOrdersDBDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
+            If (Original_Color Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Color,String)
+            End If
+            If (Original_Size Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_Size,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3039,7 +3316,7 @@ Namespace OMSysOrdersDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Date_Added As Global.System.Nullable(Of Date), ByVal Material_Name As String, ByVal Stock As Global.System.Nullable(Of Integer), ByVal Selling_Price As Global.System.Nullable(Of Decimal), ByVal Unit_Price As Global.System.Nullable(Of Decimal)) As Integer
+        Public Overloads Overridable Function Insert(ByVal Date_Added As Global.System.Nullable(Of Date), ByVal Material_Name As String, ByVal Stock As Global.System.Nullable(Of Integer), ByVal Selling_Price As Global.System.Nullable(Of Decimal), ByVal Unit_Price As Global.System.Nullable(Of Decimal), ByVal Color As String, ByVal Size As String) As Integer
             If (Date_Added.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(Date_Added.Value,Date)
             Else
@@ -3065,6 +3342,16 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
+            If (Color Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Color,String)
+            End If
+            If (Size Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(Size,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3084,7 +3371,7 @@ Namespace OMSysOrdersDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Date_Added As Global.System.Nullable(Of Date), ByVal Material_Name As String, ByVal Stock As Global.System.Nullable(Of Integer), ByVal Selling_Price As Global.System.Nullable(Of Decimal), ByVal Unit_Price As Global.System.Nullable(Of Decimal), ByVal Original_ID As Integer, ByVal Original_Date_Added As Global.System.Nullable(Of Date), ByVal Original_Material_Name As String, ByVal Original_Stock As Global.System.Nullable(Of Integer), ByVal Original_Selling_Price As Global.System.Nullable(Of Decimal), ByVal Original_Unit_Price As Global.System.Nullable(Of Decimal)) As Integer
+        Public Overloads Overridable Function Update(ByVal Date_Added As Global.System.Nullable(Of Date), ByVal Material_Name As String, ByVal Stock As Global.System.Nullable(Of Integer), ByVal Selling_Price As Global.System.Nullable(Of Decimal), ByVal Unit_Price As Global.System.Nullable(Of Decimal), ByVal Color As String, ByVal Size As String, ByVal Original_ID As Integer, ByVal Original_Date_Added As Global.System.Nullable(Of Date), ByVal Original_Material_Name As String, ByVal Original_Stock As Global.System.Nullable(Of Integer), ByVal Original_Selling_Price As Global.System.Nullable(Of Decimal), ByVal Original_Unit_Price As Global.System.Nullable(Of Decimal), ByVal Original_Color As String, ByVal Original_Size As String) As Integer
             If (Date_Added.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Date_Added.Value,Date)
             Else
@@ -3110,41 +3397,65 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_ID,Integer)
-            If (Original_Date_Added.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Date_Added.Value,Date)
+            If (Color Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Color,String)
             End If
-            If (Original_Material_Name Is Nothing) Then
+            If (Size Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Size,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_ID,Integer)
+            If (Original_Date_Added.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Date_Added.Value,Date)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Material_Name,String)
             End If
-            If (Original_Stock.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Stock.Value,Integer)
-            Else
+            If (Original_Material_Name Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Material_Name,String)
             End If
-            If (Original_Selling_Price.HasValue = true) Then
+            If (Original_Stock.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Selling_Price.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Stock.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
-            If (Original_Unit_Price.HasValue = true) Then
+            If (Original_Selling_Price.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Unit_Price.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Selling_Price.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Unit_Price.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Unit_Price.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Color Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Color,String)
+            End If
+            If (Original_Size Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Size,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -3290,7 +3601,6 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "OMSys_OrdersV2DB"
             tableMapping.ColumnMappings.Add("ID", "ID")
-            tableMapping.ColumnMappings.Add("Customer_Name", "Customer_Name")
             tableMapping.ColumnMappings.Add("Product_Name", "Product_Name")
             tableMapping.ColumnMappings.Add("Quantity", "Quantity")
             tableMapping.ColumnMappings.Add("Total_Price", "Total_Price")
@@ -3298,19 +3608,26 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Contact_Number", "Contact_Number")
             tableMapping.ColumnMappings.Add("Notes", "Notes")
             tableMapping.ColumnMappings.Add("Status", "Status")
+            tableMapping.ColumnMappings.Add("Customer_FirstName", "Customer_FirstName")
+            tableMapping.ColumnMappings.Add("Customer_MiddleName", "Customer_MiddleName")
+            tableMapping.ColumnMappings.Add("Customer_LastName", "Customer_LastName")
+            tableMapping.ColumnMappings.Add("Date_Added", "Date_Added")
+            tableMapping.ColumnMappings.Add("Date_Delivered", "Date_Delivered")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `OMSys_OrdersV2DB` WHERE ((`ID` = ?) AND ((? = 1 AND `Customer_Name` "& _ 
-                "IS NULL) OR (`Customer_Name` = ?)) AND ((? = 1 AND `Product_Name` IS NULL) OR (`"& _ 
-                "Product_Name` = ?)) AND ((? = 1 AND `Quantity` IS NULL) OR (`Quantity` = ?)) AND"& _ 
-                " ((? = 1 AND `Total_Price` IS NULL) OR (`Total_Price` = ?)) AND ((? = 1 AND `Add"& _ 
-                "ress` IS NULL) OR (`Address` = ?)) AND ((? = 1 AND `Contact_Number` IS NULL) OR "& _ 
-                "(`Contact_Number` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `OMSys_OrdersV2DB` WHERE ((`ID` = ?) AND ((? = 1 AND `Product_Name` I"& _ 
+                "S NULL) OR (`Product_Name` = ?)) AND ((? = 1 AND `Quantity` IS NULL) OR (`Quanti"& _ 
+                "ty` = ?)) AND ((? = 1 AND `Total_Price` IS NULL) OR (`Total_Price` = ?)) AND ((?"& _ 
+                " = 1 AND `Address` IS NULL) OR (`Address` = ?)) AND ((? = 1 AND `Contact_Number`"& _ 
+                " IS NULL) OR (`Contact_Number` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Stat"& _ 
+                "us` = ?)) AND ((? = 1 AND `Customer_FirstName` IS NULL) OR (`Customer_FirstName`"& _ 
+                " = ?)) AND ((? = 1 AND `Customer_LastName` IS NULL) OR (`Customer_LastName` = ?)"& _ 
+                ") AND ((? = 1 AND `Customer_MiddleName` IS NULL) OR (`Customer_MiddleName` = ?))"& _ 
+                " AND ((? = 1 AND `Date_Added` IS NULL) OR (`Date_Added` = ?)) AND ((? = 1 AND `D"& _ 
+                "ate_Delivered` IS NULL) OR (`Date_Delivered` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Customer_Name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_Name", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Customer_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Product_Name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Product_Name", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Product_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Product_Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Quantity", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Quantity", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -3323,13 +3640,23 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Contact_Number", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contact_Number", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Status", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Customer_FirstName", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_FirstName", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Customer_FirstName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_FirstName", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Customer_LastName", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_LastName", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Customer_LastName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_LastName", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Customer_MiddleName", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_MiddleName", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Customer_MiddleName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_MiddleName", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Date_Added", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Added", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Date_Added", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Added", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Date_Delivered", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Delivered", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Date_Delivered", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Delivered", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `OMSys_OrdersV2DB` (`Customer_Name`, `Product_Name`, `Quantity`, `Tot"& _ 
-                "al_Price`, `Address`, `Contact_Number`, `Notes`, `Status`) VALUES (?, ?, ?, ?, ?"& _ 
-                ", ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `OMSys_OrdersV2DB` (`Product_Name`, `Quantity`, `Total_Price`, `Addre"& _ 
+                "ss`, `Contact_Number`, `Notes`, `Status`, `Customer_FirstName`, `Customer_LastNa"& _ 
+                "me`, `Customer_MiddleName`, `Date_Added`, `Date_Delivered`) VALUES (?, ?, ?, ?, "& _ 
+                "?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Customer_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Product_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Product_Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Quantity", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Quantity", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Total_Price", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total_Price", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -3337,18 +3664,27 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contact_Number", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contact_Number", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Notes", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Notes", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Customer_FirstName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_FirstName", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Customer_LastName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_LastName", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Customer_MiddleName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_MiddleName", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Date_Added", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Added", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Date_Delivered", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Delivered", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `OMSys_OrdersV2DB` SET `Customer_Name` = ?, `Product_Name` = ?, `Quantity`"& _ 
-                " = ?, `Total_Price` = ?, `Address` = ?, `Contact_Number` = ?, `Notes` = ?, `Stat"& _ 
-                "us` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Customer_Name` IS NULL) OR (`Customer"& _ 
-                "_Name` = ?)) AND ((? = 1 AND `Product_Name` IS NULL) OR (`Product_Name` = ?)) AN"& _ 
-                "D ((? = 1 AND `Quantity` IS NULL) OR (`Quantity` = ?)) AND ((? = 1 AND `Total_Pr"& _ 
-                "ice` IS NULL) OR (`Total_Price` = ?)) AND ((? = 1 AND `Address` IS NULL) OR (`Ad"& _ 
-                "dress` = ?)) AND ((? = 1 AND `Contact_Number` IS NULL) OR (`Contact_Number` = ?)"& _ 
-                ") AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `OMSys_OrdersV2DB` SET `Product_Name` = ?, `Quantity` = ?, `Total_Price` ="& _ 
+                " ?, `Address` = ?, `Contact_Number` = ?, `Notes` = ?, `Status` = ?, `Customer_Fi"& _ 
+                "rstName` = ?, `Customer_LastName` = ?, `Customer_MiddleName` = ?, `Date_Added` ="& _ 
+                " ?, `Date_Delivered` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `Product_Name` IS NUL"& _ 
+                "L) OR (`Product_Name` = ?)) AND ((? = 1 AND `Quantity` IS NULL) OR (`Quantity` ="& _ 
+                " ?)) AND ((? = 1 AND `Total_Price` IS NULL) OR (`Total_Price` = ?)) AND ((? = 1 "& _ 
+                "AND `Address` IS NULL) OR (`Address` = ?)) AND ((? = 1 AND `Contact_Number` IS N"& _ 
+                "ULL) OR (`Contact_Number` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` ="& _ 
+                " ?)) AND ((? = 1 AND `Customer_FirstName` IS NULL) OR (`Customer_FirstName` = ?)"& _ 
+                ") AND ((? = 1 AND `Customer_LastName` IS NULL) OR (`Customer_LastName` = ?)) AND"& _ 
+                " ((? = 1 AND `Customer_MiddleName` IS NULL) OR (`Customer_MiddleName` = ?)) AND "& _ 
+                "((? = 1 AND `Date_Added` IS NULL) OR (`Date_Added` = ?)) AND ((? = 1 AND `Date_D"& _ 
+                "elivered` IS NULL) OR (`Date_Delivered` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Customer_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Product_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Product_Name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Quantity", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Quantity", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Total_Price", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Total_Price", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -3356,9 +3692,12 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Contact_Number", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contact_Number", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Notes", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Notes", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Customer_FirstName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_FirstName", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Customer_LastName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_LastName", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Customer_MiddleName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_MiddleName", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Date_Added", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Added", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Date_Delivered", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Delivered", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Customer_Name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_Name", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Customer_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Product_Name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Product_Name", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Product_Name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Product_Name", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Quantity", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Quantity", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -3371,6 +3710,16 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Contact_Number", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Contact_Number", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Status", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Customer_FirstName", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_FirstName", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Customer_FirstName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_FirstName", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Customer_LastName", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_LastName", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Customer_LastName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_LastName", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Customer_MiddleName", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_MiddleName", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Customer_MiddleName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Customer_MiddleName", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Date_Added", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Added", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Date_Added", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Added", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Date_Delivered", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Delivered", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Date_Delivered", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Date_Delivered", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3386,8 +3735,9 @@ Namespace OMSysOrdersDBDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, Customer_Name, Product_Name, Quantity, Total_Price, Address, Contact_N"& _ 
-                "umber, Notes, Status FROM OMSys_OrdersV2DB"
+            Me._commandCollection(0).CommandText = "SELECT ID, Product_Name, Quantity, Total_Price, Address, Contact_Number, Notes, S"& _ 
+                "tatus, Customer_FirstName, Customer_LastName, Customer_MiddleName, Date_Added, D"& _ 
+                "ate_Delivered FROM OMSys_OrdersV2DB"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -3447,56 +3797,84 @@ Namespace OMSysOrdersDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Customer_Name As String, ByVal Original_Product_Name As String, ByVal Original_Quantity As Global.System.Nullable(Of Integer), ByVal Original_Total_Price As Global.System.Nullable(Of Decimal), ByVal Original_Address As String, ByVal Original_Contact_Number As String, ByVal Original_Status As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Product_Name As String, ByVal Original_Quantity As Global.System.Nullable(Of Integer), ByVal Original_Total_Price As Global.System.Nullable(Of Decimal), ByVal Original_Address As String, ByVal Original_Contact_Number As String, ByVal Original_Status As String, ByVal Original_Customer_FirstName As String, ByVal Original_Customer_LastName As String, ByVal Original_Customer_MiddleName As String, ByVal Original_Date_Added As String, ByVal Original_Date_Delivered As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
-            If (Original_Customer_Name Is Nothing) Then
+            If (Original_Product_Name Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Customer_Name,String)
-            End If
-            If (Original_Product_Name Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Product_Name,String)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Product_Name,String)
             End If
             If (Original_Quantity.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Quantity.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Total_Price.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Quantity.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Total_Price.Value,Decimal)
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            If (Original_Total_Price.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Total_Price.Value,Decimal)
-            Else
+            If (Original_Address Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Address,String)
             End If
-            If (Original_Address Is Nothing) Then
+            If (Original_Contact_Number Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Address,String)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Contact_Number,String)
             End If
-            If (Original_Contact_Number Is Nothing) Then
+            If (Original_Status Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Contact_Number,String)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Status,String)
             End If
-            If (Original_Status Is Nothing) Then
+            If (Original_Customer_FirstName Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_Status,String)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_Customer_FirstName,String)
+            End If
+            If (Original_Customer_LastName Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_Customer_LastName,String)
+            End If
+            If (Original_Customer_MiddleName Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_Customer_MiddleName,String)
+            End If
+            If (Original_Date_Added Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_Date_Added,String)
+            End If
+            If (Original_Date_Delivered Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_Date_Delivered,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -3517,46 +3895,66 @@ Namespace OMSysOrdersDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Customer_Name As String, ByVal Product_Name As String, ByVal Quantity As Global.System.Nullable(Of Integer), ByVal Total_Price As Global.System.Nullable(Of Decimal), ByVal Address As String, ByVal Contact_Number As String, ByVal Notes As String, ByVal Status As String) As Integer
-            If (Customer_Name Is Nothing) Then
+        Public Overloads Overridable Function Insert(ByVal Product_Name As String, ByVal Quantity As Global.System.Nullable(Of Integer), ByVal Total_Price As Global.System.Nullable(Of Decimal), ByVal Address As String, ByVal Contact_Number As String, ByVal Notes As String, ByVal Status As String, ByVal Customer_FirstName As String, ByVal Customer_LastName As String, ByVal Customer_MiddleName As String, ByVal Date_Added As String, ByVal Date_Delivered As String) As Integer
+            If (Product_Name Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Customer_Name,String)
-            End If
-            If (Product_Name Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Product_Name,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Product_Name,String)
             End If
             If (Quantity.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Quantity.Value,Integer)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Quantity.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Total_Price.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Total_Price.Value,Decimal)
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (Total_Price.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Total_Price.Value,Decimal)
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
             If (Address Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Address,String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Address,String)
             End If
             If (Contact_Number Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Contact_Number,String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Contact_Number,String)
             End If
             If (Notes Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(Notes,String)
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Notes,String)
             End If
             If (Status Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(Status,String)
+            End If
+            If (Customer_FirstName Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Status,String)
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Customer_FirstName,String)
+            End If
+            If (Customer_LastName Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(Customer_LastName,String)
+            End If
+            If (Customer_MiddleName Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(Customer_MiddleName,String)
+            End If
+            If (Date_Added Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(Date_Added,String)
+            End If
+            If (Date_Delivered Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(11).Value = CType(Date_Delivered,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -3578,7 +3976,6 @@ Namespace OMSysOrdersDBDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update( _
-                    ByVal Customer_Name As String,  _
                     ByVal Product_Name As String,  _
                     ByVal Quantity As Global.System.Nullable(Of Integer),  _
                     ByVal Total_Price As Global.System.Nullable(Of Decimal),  _
@@ -3586,103 +3983,160 @@ Namespace OMSysOrdersDBDataSetTableAdapters
                     ByVal Contact_Number As String,  _
                     ByVal Notes As String,  _
                     ByVal Status As String,  _
+                    ByVal Customer_FirstName As String,  _
+                    ByVal Customer_LastName As String,  _
+                    ByVal Customer_MiddleName As String,  _
+                    ByVal Date_Added As String,  _
+                    ByVal Date_Delivered As String,  _
                     ByVal Original_ID As Integer,  _
-                    ByVal Original_Customer_Name As String,  _
                     ByVal Original_Product_Name As String,  _
                     ByVal Original_Quantity As Global.System.Nullable(Of Integer),  _
                     ByVal Original_Total_Price As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_Address As String,  _
                     ByVal Original_Contact_Number As String,  _
-                    ByVal Original_Status As String) As Integer
-            If (Customer_Name Is Nothing) Then
+                    ByVal Original_Status As String,  _
+                    ByVal Original_Customer_FirstName As String,  _
+                    ByVal Original_Customer_LastName As String,  _
+                    ByVal Original_Customer_MiddleName As String,  _
+                    ByVal Original_Date_Added As String,  _
+                    ByVal Original_Date_Delivered As String) As Integer
+            If (Product_Name Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Customer_Name,String)
-            End If
-            If (Product_Name Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Product_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Product_Name,String)
             End If
             If (Quantity.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Quantity.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Quantity.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Total_Price.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Total_Price.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (Total_Price.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Total_Price.Value,Decimal)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
             If (Address Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Address,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Address,String)
             End If
             If (Contact_Number Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Contact_Number,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Contact_Number,String)
             End If
             If (Notes Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Notes,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Notes,String)
             End If
             If (Status Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Status,String)
+            End If
+            If (Customer_FirstName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Status,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Customer_FirstName,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_ID,Integer)
-            If (Original_Customer_Name Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+            If (Customer_LastName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Customer_LastName,String)
+            End If
+            If (Customer_MiddleName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Customer_MiddleName,String)
+            End If
+            If (Date_Added Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Customer_Name,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Date_Added,String)
             End If
+            If (Date_Delivered Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Date_Delivered,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_ID,Integer)
             If (Original_Product_Name Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Product_Name,String)
-            End If
-            If (Original_Quantity.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Quantity.Value,Integer)
-            Else
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Product_Name,String)
             End If
-            If (Original_Total_Price.HasValue = true) Then
+            If (Original_Quantity.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Total_Price.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Quantity.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             End If
-            If (Original_Address Is Nothing) Then
+            If (Original_Total_Price.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_Total_Price.Value,Decimal)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_Address,String)
             End If
-            If (Original_Contact_Number Is Nothing) Then
+            If (Original_Address Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_Contact_Number,String)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_Address,String)
             End If
-            If (Original_Status Is Nothing) Then
+            If (Original_Contact_Number Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_Status,String)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_Contact_Number,String)
+            End If
+            If (Original_Status Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_Status,String)
+            End If
+            If (Original_Customer_FirstName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_Customer_FirstName,String)
+            End If
+            If (Original_Customer_LastName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_Customer_LastName,String)
+            End If
+            If (Original_Customer_MiddleName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_Customer_MiddleName,String)
+            End If
+            If (Original_Date_Added Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_Date_Added,String)
+            End If
+            If (Original_Date_Delivered Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_Date_Delivered,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
